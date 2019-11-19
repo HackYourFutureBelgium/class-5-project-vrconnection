@@ -1,0 +1,36 @@
+version: 2.1
+
+
+jobs:
+  test:
+    docker:
+      - image: node
+    steps:
+      - checkout
+      - run:
+          name: install
+          working_directory: app/
+          command: |
+            yarn install 
+      - run:
+          name: test
+          working_directory: app/
+          command: |
+            yarn test
+  build:
+    docker:
+      - image: node
+    steps:
+      - checkout
+      - run:
+          name: install
+          working_directory: app/
+          command: |
+            yarn install 
+      - run:
+          name: build
+          working_directory: app/
+          command: |
+            yarn build
+
+
