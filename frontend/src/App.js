@@ -29,10 +29,7 @@ function App() {
         >
           Learn React
         </a>
-<<<<<<< HEAD
-=======
         <p>{greeting}</p>
->>>>>>> 26725750d044e42e2a15cedb193e0187fce3a367
       </header>
     </div>
   );

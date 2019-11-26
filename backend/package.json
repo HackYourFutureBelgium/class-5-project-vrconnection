@@ -31,30 +31,19 @@
   "license": "MIT",
   "dependencies": {
     "@babel/cli": "^7.7.4",
-<<<<<<< HEAD
-=======
     "@babel/node": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
->>>>>>> 26725750d044e42e2a15cedb193e0187fce3a367
     "babel-jest": "^24.9.0",
     "body-parser": "^1.13.3",
     "compression": "^1.5.2",
     "cors": "^2.7.1",
-<<<<<<< HEAD
-=======
     "dotenv": "^8.2.0",
->>>>>>> 26725750d044e42e2a15cedb193e0187fce3a367
     "express": "^4.13.3",
     "jest": "^24.9.0",
     "morgan": "^1.8.0",
     "resource-router-middleware": "^0.6.0"
   },
   "devDependencies": {
-<<<<<<< HEAD
-    "@babel/core": "^7.7.4",
-    "@babel/preset-env": "^7.7.4",
-=======
->>>>>>> 26725750d044e42e2a15cedb193e0187fce3a367
     "eslint": "6.1.0",
     "eslint-config-airbnb-base": "14.0.0",
     "eslint-plugin-import": "^2.18.2",
