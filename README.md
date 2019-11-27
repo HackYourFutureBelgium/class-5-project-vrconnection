@@ -1,6 +1,21 @@
 # class-5-project-vrconnection
 
 VRC is a community based project which aims to help refugges providing them usefull information and make them connect with volunteers that can help them.
+# class-5-project
+
+## Overal structure
+
+There are two folders: `frontend` and `backend`. Each contain what they are named. 
+
+## Helper scripts / how to work with this
+
+The frontend repo should container working scripts in the `frontend/package.json` file
+to lint, test and build the project. 
+The backend script should have also several helper functions such as `yarn db` to spin
+up a docker container that runs a mongodb on your local machine as well as `yarn dev`
+that automatically restarts your server whenever a file changes. 
+
+Of course, both need `yarn install` at the beginning. 
 
 ## CICD
 
@@ -25,3 +40,4 @@ I configured the frontend to be deployed to a firebase hosting solution. For thi
 ## Linting
 
 The frontend (and hopefully also soon the backend) should be linted. Use [this article](https://medium.com/@pppped/extend-create-react-app-with-airbnbs-eslint-config-prettier-flow-and-react-testing-library-96627e9a9672) for guidance
+

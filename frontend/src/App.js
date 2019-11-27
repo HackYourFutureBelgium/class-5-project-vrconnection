@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import API_URL from './api';
+
+const HELLO_ENDPOINT = `${API_URL()}/hello`;
 
 function App() {
+  const [greeting, setGreeting] = useState();
+
+  useEffect(() => {
+    fetch(HELLO_ENDPOINT)
+      .then((res) => res.json())
+      .then((val) => setGreeting(val.greeting));
+  });
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +29,7 @@ function App() {
         >
           Learn React
         </a>
+        <p>{greeting}</p>
       </header>
     </div>
   );

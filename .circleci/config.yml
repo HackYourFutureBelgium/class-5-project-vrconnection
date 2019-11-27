@@ -141,6 +141,11 @@ workflows:
         requires:
           - frontend_install
     - frontend_build:
+        # add this filter if the build takes long and branches aren't really needed to be built for the FE
+        # filters:
+          # branches:
+            # only:
+              # master
         requires:
           - frontend_install
     - frontend_deploy:
