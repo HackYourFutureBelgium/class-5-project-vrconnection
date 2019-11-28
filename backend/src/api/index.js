@@ -1,22 +1,23 @@
 import { Router } from 'express';
-import { version } from '../../package.json';
+const
+  { getRefugees,
+    getRefugee,
+    createRefugee,
+    updateRefugee,
+    deleteRefuge
+  } = require('./refugee-actions');
+
+const REFUGEE = `refugee`
 
 export default ({ config, db }) => {
   const api = Router();
 
-
-  // perhaps expose some API metadata at the root
-  api.get('/', (req, res) => {
-    res.json({ version });
-  });
-
-  api.get('/hello', (req, res) => {
-    res.json({ greeting: "world" });
-  });
-
-  api.get('/db/url', (req, res) => {
-    res.json({ url: `${process.env.DB_HOST}:${process.env.DB_PORT}`});
-  });
+  // Refugee-CRUD actions
+  api.get(`/${REFUGEE}`, getRefugees);
+  api.get(`/${REFUGEE}/:id`, getRefugee);
+  api.post(`/${REFUGEE}`, createRefugee );
+  api.patch(`/${REFUGEE}/:id`, updateRefugee)
+  api.delete(`/${REFUGEE}/:id`, deleteRefuge);
 
   return api;
 }
