@@ -1,6 +1,6 @@
 const volunteerManager = require('../VolunteerManager');
 
-function deleteTodo(request, response) {
+function deleteVolunteer(request, response) {
   const id = request.params.id;
   volunteerManager.delete(id)
     .then(() => {
@@ -13,4 +13,4 @@ function deleteTodo(request, response) {
     });
 }
 
-module.exports = deleteTodo;
+module.exports = deleteVolunteer;
