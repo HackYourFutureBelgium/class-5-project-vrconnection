@@ -11,7 +11,6 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-
 const app = express();
 app.server = http.createServer(app);
 
@@ -29,6 +28,7 @@ app.use(bodyParser.json({
 
 // connect to db
 initializeDb((db) => {
+
   // internal middleware
   app.use(middleware({ config, db }));
 
