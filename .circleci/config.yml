@@ -126,13 +126,18 @@ jobs:
       # - store_artifacts:
       #     path: ./build
   backend_deploy:
+    working_directory: ~/project/backend/
     docker:
       - image: buildpack-deps:trusty
     steps:
-      - checkout
+      - attach_workspace:
+          at: ~/project/backend/
       - run:
           name: Deploy Master to Heroku
           command: |
+            git init ./
+            git add .
+            git commit -m "CI deploy"
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
 
 workflows:
