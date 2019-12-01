@@ -168,9 +168,9 @@ workflows:
         requires:
           - backend_install
     - backend_deploy:
-      #  filters:
-      #    branches:
-      #      only:
-      #        master
+       filters:
+         branches:
+           only:
+             master
        requires:
          - backend_build
