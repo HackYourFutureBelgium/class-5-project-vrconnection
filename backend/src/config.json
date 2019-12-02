@@ -1,6 +1,5 @@
 {
-	"port": 8080,
-	"bodyLimit": "100kb",
-  "corsHeaders": ["Link"],
-  "DB_HOST":"mongodb+srv://vrconnection:KSg2WnnTjvpb7JgT@rvconnections0-w205o.mongodb.net/vrconnection_db"
+  "port": 8080,
+  "bodyLimit": "100kb",
+  "corsHeaders": ["Link"]
 }
