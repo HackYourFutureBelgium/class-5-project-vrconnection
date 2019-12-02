@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
+import Home from './components/Home';
+import About from './components/About';
+import RefugeeRegistration from './components/RefugeeRegistration';
+import VolunteerRegistration from './components/VolunteerRegistration';
+import MainNavbar from './components/MainNavbar';
 import API_URL from './api';
 
 const HELLO_ENDPOINT = `${API_URL()}/hello`;
@@ -10,28 +15,21 @@ function App() {
 
   useEffect(() => {
     fetch(HELLO_ENDPOINT)
-      .then((res) => res.json())
-      .then((val) => setGreeting(val.greeting));
+      .then(res => res.json())
+      .then(val => setGreeting(val.greeting));
   });
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <Router>
+      <div className="App">
+        <MainNavbar />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/About" component={About} />
+        <Route exact path="/RefugeeRegistration" component={RefugeeRegistration} />
+        <Route exact path="/VolunteerRegistration" component={VolunteerRegistration} />
         <p>{greeting}</p>
-      </header>
-    </div>
+      </div>
+    </Router>
   );
 }
 
