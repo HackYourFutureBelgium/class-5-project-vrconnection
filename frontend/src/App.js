@@ -15,8 +15,8 @@ function App() {
 
   useEffect(() => {
     fetch(HELLO_ENDPOINT)
-      .then(res => res.json())
-      .then(val => setGreeting(val.greeting));
+      .then((res) => res.json())
+      .then((val) => setGreeting(val.greeting));
   });
 
   return (
