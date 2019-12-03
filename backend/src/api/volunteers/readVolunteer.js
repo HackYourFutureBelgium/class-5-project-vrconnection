@@ -1,6 +1,6 @@
 const volunteerManager = require('../VolunteerManager');
 
-function readUser(request, response) {
+function readVolunteer(request, response) {
 
   Promise.resolve()
     .then(() => {
@@ -9,7 +9,7 @@ function readUser(request, response) {
     })
     .then(user => {
       response.status(200);
-      response.json({ user });
+      response.json({ volunteer });
     })
     .catch(({ code, message }) => {
       response.status(code === 'not-found' ? 404 : 500);
@@ -17,4 +17,4 @@ function readUser(request, response) {
     });
 }
 
-module.exports = readUser;
+module.exports = readVolunteer;
