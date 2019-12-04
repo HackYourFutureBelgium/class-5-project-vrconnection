@@ -41,7 +41,6 @@ class VolunteerManager {
       error.code = 'no-content';
       throw error;
     }
-
     return volunteers;
   }
 
