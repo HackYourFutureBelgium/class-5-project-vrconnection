@@ -8,12 +8,11 @@ img {
   border-style: none;
 }
 .navbar {
-  min-height: 200px;
+  min-height: 5%;
 }
 
 .navbar-brand {
   padding: 0 15px;
-  height: 150px;
   line-height: 80px;
 }
 

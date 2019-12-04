@@ -40,9 +40,14 @@ export default ({ config, db }) => {
   api.delete(`/${REFUGEE}/:id`, deleteRefuge);
 
   // perhaps expose some API metadata at the root
+  api.get('/hello', (req, res) => {
+    res.json({ greeting: 'world' });
+  });
+
   api.get('/', (req, res) => {
     res.json({ version });
   });
+
 
   return api;
 }
