@@ -3,7 +3,6 @@ import React from 'react';
 import {
   Card, Row, Col,
 } from 'react-bootstrap';
-import './VolunteerRegistration.css';
 
 function VolunteerRegistrationAdded({ formVolunteer }) {
   const data = formVolunteer.data.volunteer;

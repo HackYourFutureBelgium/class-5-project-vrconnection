@@ -7,9 +7,7 @@ import axios from 'axios';
 import {
   Form, Button, Card, Row, Col, Alert,
 } from 'react-bootstrap';
-import './VolunteerRegistration.css';
-import API_URL from '../api';
-
+import API_URL from '../../api';
 
 function VolunteerRegistrationForm({ formVolunteer, setFormVolunteer }) {
   const [name, setName] = useState('');
