@@ -5,11 +5,12 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
+import Menu from './Menu';
 
 const Layout = () => (
   <Router>
     <Row>
-      <Col lg={12}>Header</Col>
+      <Col lg={12}><Menu /></Col>
     </Row>
     <Switch>
       <Row>
