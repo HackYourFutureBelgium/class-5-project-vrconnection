@@ -6,6 +6,8 @@ import {
   Route,
 } from 'react-router-dom';
 import Menu from './Menu';
+import About from './About';
+import Aside from './Aside'
 
 const Layout = () => (
   <Router>
@@ -15,8 +17,8 @@ const Layout = () => (
     <Switch>
       <Row>
         <Route path="/" exact>
-          <Col sm={6}>About</Col>
-          <Col sm={6}>Aside</Col>
+          <Col sm={6}><About /></Col>
+          <Col sm={6}><Aside /></Col>
         </Route>
         <Route path="/refugees/signup" exact>
           <Col sm={12}>Refugee Registration</Col>
