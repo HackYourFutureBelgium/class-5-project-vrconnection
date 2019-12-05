@@ -1,11 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const RefugeeRegister = () => {
-  const [validated, setValidated] = useState(false);
-
-  return (
-    <h1>Refugee Register Form will be rendered Hear</h1>
-  );
-}
+const RefugeeRegister = () => (
+  <h1>Refugee Register Form will be rendered Hear</h1>
+)
 
 export default RefugeeRegister;

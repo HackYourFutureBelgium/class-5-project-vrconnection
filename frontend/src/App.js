@@ -15,7 +15,7 @@ function App() {
   });
 
   return (
-    <Layout />
+    <Layout greeting={greeting} />
   );
 }
 

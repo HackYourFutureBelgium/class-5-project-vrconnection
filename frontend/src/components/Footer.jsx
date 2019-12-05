@@ -12,10 +12,10 @@ const Footer = () => (
         <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
           <h6 className="text-uppercase mb-4 font-weight-bold">Useful links</h6>
           <p>
-            <a href="#">Other Volunteers</a>
+            <a href="/otherVolunteers">Other Volunteers</a>
           </p>
           <p>
-            <a href="#">FAQ</a>
+            <a href="/faq">FAQ</a>
           </p>
         </div>
         <hr className="w-100 clearfix d-md-none" />
@@ -30,7 +30,7 @@ const Footer = () => (
       <div className="row d-flex align-items-center">
         <div className="col-md-7 col-lg-8">
           <p className="text-center text-md-left">© 2018 Copyright:
-            <a href="#">
+            <a href="/website">
               <strong> VRconnection.com</strong>
             </a>
           </p>
@@ -39,22 +39,22 @@ const Footer = () => (
           <div className="text-center text-md-right">
             <ul className="list-unstyled list-inline">
               <li className="list-inline-item">
-                <a className="btn-floating btn-sm rgba-white-slight mx-1">
+                <a className="btn-floating btn-sm rgba-white-slight mx-1" href="/facebook">
                   <i className="fab fa-facebook-f" />
                 </a>
               </li>
               <li className="list-inline-item">
-                <a className="btn-floating btn-sm rgba-white-slight mx-1" href="#">
+                <a className="btn-floating btn-sm rgba-white-slight mx-1" href="/twitter">
                   <i className="fab fa-twitter" />
                 </a>
               </li>
               <li className="list-inline-item">
-                <a className="btn-floating btn-sm rgba-white-slight mx-1">
+                <a className="btn-floating btn-sm rgba-white-slight mx-1" href="/google">
                   <i className="fab fa-google-plus-g" />
                 </a>
               </li>
               <li className="list-inline-item">
-                <a className="btn-floating btn-sm rgba-white-slight mx-1">
+                <a className="btn-floating btn-sm rgba-white-slight mx-1" href="/linkedin">
                   <i className="fab fa-linkedin-in" />
                 </a>
               </li>
