@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+import VolunteerRegistrationForm from './VolunteerRegistrationForm';
+import VolunteerRegistrationAdded from './VolunteerRegistrationAdded';
 
-const VolunteerRegister = () => (
-  <h1>Volunteer Register Form will be rendered Hear</h1>
-);
+function VolunteerRegistration() {
+  const [formVolunteer, setFormVolunteer] = useState({ error: 1 });
+  return (
+    formVolunteer.error === 1
+      ? <VolunteerRegistrationForm formVolunteer={formVolunteer} setFormVolunteer={setFormVolunteer} />
+      : <VolunteerRegistrationAdded formVolunteer={formVolunteer} />
+  )
+}
 
-export default VolunteerRegister;
+export default VolunteerRegistration;
