@@ -7,7 +7,9 @@ import {
 } from 'react-router-dom';
 import Menu from './Menu';
 import About from './About';
-import Aside from './Aside'
+import Aside from './Aside';
+import Footer from './Footer';
+import LoginComponent from './LoginComponent';
 
 const Layout = () => (
   <Router>
@@ -33,12 +35,12 @@ const Layout = () => (
           <Col sm={12}>Volunteer Profile</Col>
         </Route>
         <Route path="/login" exact>
-          <Col sm={12}>Log in</Col>
+          <Col sm={12}><LoginComponent /></Col>
         </Route>
       </Row>
     </Switch>
     <Row>
-      <Col sm={12}>Footer</Col>
+      <Col sm={12}><Footer /> </Col>
     </Row>
   </Router>
 );
