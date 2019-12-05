@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import './assets/App.css';
 import API_URL from './api';
 
 const HELLO_ENDPOINT = `${API_URL()}/hello`;
