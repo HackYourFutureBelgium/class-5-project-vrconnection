@@ -10,6 +10,10 @@ import About from './About';
 import Aside from './Aside';
 import Footer from './Footer';
 import LoginComponent from './LoginComponent';
+import RefugeeRegister from './refugeeComponent/RefugeeRegister';
+import RefugeeProfile from './refugeeComponent/RefugeeProfile';
+import VolunteerRegister from './volunteerCmponent/VolunteerRegister';
+import VolunteerProfile from './volunteerCmponent/VolunteerProfile';
 
 const Layout = () => (
   <Router>
@@ -23,16 +27,16 @@ const Layout = () => (
           <Col sm={6}><Aside /></Col>
         </Route>
         <Route path="/refugees/signup" exact>
-          <Col sm={12}>Refugee Registration</Col>
+          <Col sm={12}><RefugeeRegister /></Col>
         </Route>
         <Route path="/refugees/profile" exact>
-          <Col sm={12}>Refugee Profile</Col>
+          <Col sm={12}><RefugeeProfile /></Col>
         </Route>
         <Route path="/volunteers/signup" exact>
-          <Col sm={12}>Volunteer Registration</Col>
+          <Col sm={12}><VolunteerRegister /></Col>
         </Route>
         <Route path="/volunteers/profile" exact>
-          <Col sm={12}>Volunteer Profile</Col>
+          <Col sm={12}><VolunteerProfile /></Col>
         </Route>
         <Route path="/login" exact>
           <Col sm={12}><LoginComponent /></Col>
