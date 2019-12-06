@@ -20,7 +20,7 @@ class VolunteerManager {
     }
     // Create volunteer
     return this.addVolunteer(body)
-  } y
+  }
 
   async get(id) {
     const volunteer = await this.findVolunteerId(id);
