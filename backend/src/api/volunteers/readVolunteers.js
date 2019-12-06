@@ -1,4 +1,4 @@
-const volunteerManager = require('../VolunteerManager');
+const volunteerManager = require('../volunteerManager');
 
 function readVolunteers(request, response) {
 
