@@ -134,7 +134,7 @@ jobs:
           at: ~/project/
       - run: |
           echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
-          gcloud --quiet config set project class-5-project
+          gcloud --quiet config set project Class-5-project
           gcloud --quiet config set compute/zone europe-west1
           gcloud app deploy --quiet
 
