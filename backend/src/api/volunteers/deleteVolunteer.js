@@ -1,4 +1,4 @@
-const volunteerManager = require('../VolunteerManager');
+const volunteerManager = require('../volunteerManager');
 
 function deleteVolunteer(request, response) {
   const id = request.params.id;

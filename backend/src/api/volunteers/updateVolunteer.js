@@ -1,4 +1,4 @@
-const volunteerManager = require('../VolunteerManager');
+const volunteerManager = require('../volunteerManager');
 const validator = require('email-validator');
 
 function updateVolunteer(request, response) {
