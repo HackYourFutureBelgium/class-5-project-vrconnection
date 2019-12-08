@@ -57,6 +57,7 @@
   box-shadow: none ;
   outline: 0px ;
 }
-.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-  background-color: #c0392b ;
+.input_errors {
+  color: red;
+  font-size: smaller;
 }
