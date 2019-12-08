@@ -24,11 +24,16 @@ const getRefugee = async (req, res) => {
 
 const createRefugee = async (req, res) => {
   const refugee = new Refugee({
-    fullName: req.body.fullName,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
     gender: req.body.gender,
     age: req.body.age,
-    address: req.body.address,
-    username: req.body.username
+    email: req.body.email,
+    phoneNumber: req.body.phoneNumber,
+    country: req.body.country,
+    language: req.body.language,
+    username: req.body.username,
+    password: req.body.password
   })
 
   try {
