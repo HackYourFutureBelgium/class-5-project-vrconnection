@@ -29,7 +29,7 @@ const Layout = () => {
             <Col sm={6}><Aside /></Col>
           </Route>
           <Route path="/refugees/signup" exact>
-            <Col sm={12}><RefugeeRegister setError={setError} /></Col>
+            <Col sm={12}><RefugeeRegister setError={setError} error={error} /></Col>
           </Route>
           <Route path="/refugees/profile" exact>
             <Col sm={12}><RefugeeProfile setError={setError} /></Col>

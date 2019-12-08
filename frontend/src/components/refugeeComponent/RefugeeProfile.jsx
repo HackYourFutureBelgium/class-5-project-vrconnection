@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+/* eslint-disable react/prop-types */
+
+import React from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
 import {
   Container,
   Row, Col, Table,
@@ -9,14 +10,10 @@ import {
 import API_URL from '../../api';
 import profilePicture from '../../assets/images/refugee.jpg'
 
-const RefugeeProfile = () => {
-  const { id } = useParams();
-  const [refugee, setRefugee] = useState(null);
-
+const RefugeeProfile = ({ setError }) => {
   axios
     .get(`${API_URL('dev')}/refugee`)
-    .then((response) => setRefugee(response))
-    .catch((err) => console.log(err));
+    .catch((err) => setError(err));
 
   return (
     <Row>

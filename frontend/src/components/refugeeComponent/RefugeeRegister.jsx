@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+/* eslint-disable prefer-destructuring */
+/* eslint-disable react/prop-types */
+
+import React from 'react';
 import axios from 'axios';
 import {
   Container,
@@ -11,9 +14,7 @@ import useForm from 'react-hook-form';
 import API_URL from '../../api';
 import RefugeeRegisterInfo from './RefugeeRegisterInfo';
 
-const RefugeeRegister = () => {
-  const [signUp, setSignUp] = useState(false);
-  const [error, setError] = useState(false);
+const RefugeeRegister = ({ setError }) => {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (
     {
@@ -33,13 +34,9 @@ const RefugeeRegister = () => {
             'Content-Type': 'application/json',
           },
         })
-      .then(() => { setSignUp(true) })
       .catch((err) => {
         setError(err)
       })
-    if (error) console.log(error);
-
-    if (!error) alert('okay')
   }
 
   return (
