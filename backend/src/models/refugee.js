@@ -1,7 +1,12 @@
 import mongoose from 'mongoose';
 
 const refugeeSchema = new mongoose.Schema({
-  fullName: {
+  firstName: {
+    type: String,
+    required: true 
+  },
+
+  lastName: {
     type: String,
     required: true 
   },
@@ -30,23 +35,41 @@ const refugeeSchema = new mongoose.Schema({
     default: 'shelter'
   },
 
-  address: {
-    phone: {
-      type: Number,
-      minlength: 8,
-      manlength: 15
-    },
-    email: {
-      type:String,
-    }
+  phoneNumber: {
+    type: Number,
+    minlength: 8,
+    manlength: 15
+  },
+
+  country: {
+    type: String,
+    required: true
+  },
+
+  language: {
+    type: String,
+    required: true
+  },
+
+  email: {
+    type: String,
+    lowercase: true
   },
 
   username: {
-    type : String,
+    type: String,
+    lowercase: true,
     required : true,
     trim : true,
     unique : true
   },
+
+  password: {
+    type : String,
+    required : true,
+    trim : true,
+  },
+
 
   registeredDate: {
     type: Date,
@@ -56,7 +79,12 @@ const refugeeSchema = new mongoose.Schema({
 
   otherInformation: {
     type: String
+  },
+
+  profileImage: {
+    type: String
   }
+
 });
 
 module.exports = mongoose.model('Refugee', refugeeSchema);
