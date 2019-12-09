@@ -10,6 +10,7 @@ const Menu = () => (
         <Nav.Link href="/refugees/profile">Refugee</Nav.Link>
         <NavDropdown title="Volunteer" id="collasible-nav-dropdown">
           <NavDropdown.Item href="/volunteers/profile">Profile</NavDropdown.Item>
+          <NavDropdown.Item href="/volunteers/findHelp">I want to help</NavDropdown.Item>
         </NavDropdown>
         <NavDropdown title="Register" id="collasible-nav-dropdown">
           <NavDropdown.Item href="/volunteers/signup">Voluteer</NavDropdown.Item>
