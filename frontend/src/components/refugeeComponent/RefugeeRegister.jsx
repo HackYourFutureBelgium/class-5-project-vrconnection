@@ -30,7 +30,6 @@ const RefugeeRegister = ({ setError }) => {
     age,
     gender,
   }) => {
-    console.log(help);
     axios
       .post(
         `${API_URL('dev')}/refugee`,
