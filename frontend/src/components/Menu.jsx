@@ -7,13 +7,14 @@ const Menu = () => (
     <Navbar.Collapse id="responsive-navbar-nav">
       <Nav className="mr-auto">
         <Nav.Link href="/">Home</Nav.Link>
-        <NavDropdown title="Refugee" id="collasible-nav-dropdown">
-          <NavDropdown.Item href="/refugees/profile">Profile</NavDropdown.Item>
-          <NavDropdown.Item href="/refugees/signup">Sign up</NavDropdown.Item>
-        </NavDropdown>
+        <Nav.Link href="/refugees/profile">Refugee</Nav.Link>
         <NavDropdown title="Volunteer" id="collasible-nav-dropdown">
           <NavDropdown.Item href="/volunteers/profile">Profile</NavDropdown.Item>
-          <NavDropdown.Item href="/volunteers/signup">Sign up</NavDropdown.Item>
+          <NavDropdown.Item href="/volunteers/findHelp">I want to help</NavDropdown.Item>
+        </NavDropdown>
+        <NavDropdown title="Register" id="collasible-nav-dropdown">
+          <NavDropdown.Item href="/volunteers/signup">Voluteer</NavDropdown.Item>
+          <NavDropdown.Item href="/refugees/signup">Reugees</NavDropdown.Item>
         </NavDropdown>
         <Nav.Link href="/faq">FAQ</Nav.Link>
         <Nav.Link href="/login">Log in</Nav.Link>
