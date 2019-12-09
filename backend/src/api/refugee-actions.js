@@ -34,7 +34,8 @@ const createRefugee = async (req, res) => {
     country: req.body.country,
     language: req.body.language,
     username: req.body.username,
-    password: req.body.password
+    password: req.body.password,
+    description:req.body.description,
   })
 
   try {

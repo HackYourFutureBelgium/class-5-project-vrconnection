@@ -64,7 +64,10 @@ const refugeeSchema = new mongoose.Schema({
   },
   profileImage: {
     type: String
-  }
+  },
+  description: {
+    type: String
+  },
 });
 
 module.exports = mongoose.model('Refugee', refugeeSchema);
