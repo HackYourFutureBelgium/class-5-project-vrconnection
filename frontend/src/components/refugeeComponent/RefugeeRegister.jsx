@@ -9,6 +9,7 @@ import {
   Col,
   Row,
   Button,
+  Jumbotron,
 } from 'react-bootstrap';
 import useForm from 'react-hook-form';
 import API_URL from '../../api';
@@ -16,34 +17,53 @@ import RefugeeRegisterInfo from './RefugeeRegisterInfo';
 
 const RefugeeRegister = ({ setError }) => {
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = (
-    {
-      firstName, lastName,
-      username, password,
-      email, phoneNumber,
-      country, language, help,
-      age, gender,
-    },
-  ) => {
+  const onSubmit = ({
+    firstName,
+    lastName,
+    username,
+    password,
+    email,
+    phoneNumber,
+    country,
+    language,
+    help,
+    age,
+    gender,
+  }) => {
+    console.log(help);
     axios
-      .post(`${API_URL('dev')}/refugee`,
+      .post(
+        `${API_URL('dev')}/refugee`,
         {
-          firstName, lastName, username, password, email, phoneNumber, country, language, help, age, gender,
-        }, {
+          firstName,
+          lastName,
+          username,
+          password,
+          email,
+          phoneNumber,
+          country,
+          language,
+          help,
+          age,
+          gender,
+        },
+        {
           headers: {
             'Content-Type': 'application/json',
           },
-        })
+        },
+      )
       .catch((err) => {
-        setError(err)
-      })
-  }
+        setError(err);
+      });
+  };
 
   return (
     <Row>
-      <Col sm={6}><RefugeeRegisterInfo /></Col>
       <Col sm={6}>
-
+        <RefugeeRegisterInfo />
+      </Col>
+      <Col sm={6}>
         <Container className="border border-primary">
           <h1 className="pb-2">Refugee Registration Form</h1>
           <Form onSubmit={handleSubmit(onSubmit)}>
@@ -102,6 +122,7 @@ const RefugeeRegister = ({ setError }) => {
                   name="email"
                   placeholder="Email"
                   ref={register({
+                    required: true,
                     pattern: {
                       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
                     },
@@ -118,18 +139,16 @@ const RefugeeRegister = ({ setError }) => {
                   placeholder="Phone Number"
                   ref={register({ minlength: 8, maxlength: 15 })}
                 />
-                <p className="input_errors">{errors.phoneNumber && ' please enter valid phone number'}</p>
+                <p className="input_errors">
+                  {errors.phoneNumber && ' please enter valid phone number'}
+                </p>
               </Form.Group>
             </Form.Row>
 
             <Form.Row>
               <Form.Group as={Col} controlId="formGridCountry">
                 <Form.Label>Country</Form.Label>
-                <Form.Control
-                  as="select"
-                  name="country"
-                  ref={register}
-                >
+                <Form.Control as="select" name="country" ref={register}>
                   <option>Country one</option>
                   <option>Country two</option>
                 </Form.Control>
@@ -137,33 +156,18 @@ const RefugeeRegister = ({ setError }) => {
 
               <Form.Group as={Col} controlId="formGridLanguage">
                 <Form.Label>Language</Form.Label>
-                <Form.Control
-                  as="select"
-                  name="language"
-                  ref={register}
-                >
+                <Form.Control as="select" name="language" ref={register}>
                   <option>Language one</option>
                   <option>Language two</option>
                 </Form.Control>
-              </Form.Group>
-
-              <Form.Group as={Col} controlId="formGridHelp">
-                <Form.Label>Need Help </Form.Label>
-                <Form.Control
-                  as="select"
-                  name="help"
-                  ref={register({ required: true })}
-                >
-                  <option>shelter</option>
-                  <option>Help two</option>
-                </Form.Control>
-                <p className="input_errors">{errors.help && 'please select one help'}</p>
               </Form.Group>
             </Form.Row>
 
             <Form.Row>
               <Form.Group as={Row} controlId="formGridAge">
-                <Form.Label column sm={2}>Age</Form.Label>
+                <Form.Label column sm={2}>
+                  Age
+                </Form.Label>
                 <Col sm={8}>
                   <Form.Control
                     type="number"
@@ -176,13 +180,11 @@ const RefugeeRegister = ({ setError }) => {
               </Form.Group>
 
               <Form.Group as={Row} controlId="formGridGender">
-                <Form.Label column sm={3}>Gender </Form.Label>
+                <Form.Label column sm={3}>
+                  Gender{' '}
+                </Form.Label>
                 <Col sm={8}>
-                  <Form.Control
-                    as="select"
-                    name="gender"
-                    ref={register({ required: true })}
-                  >
+                  <Form.Control as="select" name="gender" ref={register({ required: true })}>
                     <option>male</option>
                     <option>Gender two</option>
                   </Form.Control>
@@ -191,6 +193,22 @@ const RefugeeRegister = ({ setError }) => {
               </Form.Group>
             </Form.Row>
 
+            <Jumbotron>
+              <h3> I need help in:</h3>
+              <Form.Row>
+                <Form.Group as={Col} controlId="formGridHelp">
+                  <Form.Label>I need help with.. </Form.Label>
+                  <Form.Control as="select" name="help" multiple ref={register({ required: true })}>
+                    <option>shelter</option>
+                    <option>healthcare</option>
+                    <option>education</option>
+                    <option>legal advice</option>
+                  </Form.Control>
+                  <p className="input_errors">{errors.help && 'please select one help'}</p>
+                </Form.Group>
+
+              </Form.Row>
+            </Jumbotron>
             <Button type="submit" size="lg" className="btn btn-primary mx-auto d-block mt-4">
               Submit
             </Button>
@@ -198,7 +216,7 @@ const RefugeeRegister = ({ setError }) => {
         </Container>
       </Col>
     </Row>
-  )
-}
+  );
+};
 
 export default RefugeeRegister;
