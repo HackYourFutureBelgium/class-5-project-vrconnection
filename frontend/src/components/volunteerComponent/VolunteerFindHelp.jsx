@@ -1,4 +1,5 @@
 /* eslint-disable no-underscore-dangle */
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import axios from 'axios';
 import {
@@ -9,29 +10,35 @@ import {
   Tab,
   Card,
   Badge,
+  ButtonToolbar,
+  Button,
 } from 'react-bootstrap';
 import API_URL from '../../api';
 
-/* const PaginationBasic = () => {
-  const active = 1;
+const PaginationValue = 7;
+
+const PaginationBasic = ({ totalPagination, setPagination }) => {
+  const maxPag = Math.ceil(totalPagination / PaginationValue);
   const items = [];
-  for (let number = 1; number <= 5; number += 1) {
+  for (let number = 1; number <= maxPag; number += 1) {
     items.push(
-      <Pagination.Item key={number} active={number === active}>
+      <Button key={number} variant="outline-primary" onClick={() => (setPagination(number))}>
         {number}
-      </Pagination.Item>,
+      </Button>,
     );
   }
-     // <PaginationBasic />
+
   return (
     <div>
-      <Pagination>{items}</Pagination>
+      <ButtonToolbar>{items}</ButtonToolbar>
     </div>
   )
-} */
+}
 
 const VolunteerFindHelp = () => {
   const [refugeesInfo, setRefugeesInfo] = useState({ data: [], status: 'initialize' });
+  const [pagination, setPagination] = useState(1);
+
   if (refugeesInfo.status === 'initialize') {
     axios.get(`${API_URL()}/refugee`, {
       headers: {
@@ -40,22 +47,26 @@ const VolunteerFindHelp = () => {
     })
       .then((result) => setRefugeesInfo({ data: result.data, status: 'loaded' }))
   }
-  console.log(refugeesInfo);
+  const defaultValue = refugeesInfo.status === 'loaded' ? `#${refugeesInfo.data[0]._id}` : null;
+  console.log(defaultValue);
   return (
     <Container className="mb-4 pt-4">
-      <Tab.Container id="list-group-tabs-example">
+      <Tab.Container id="list-group-tabs-example" defaultActiveKey={defaultValue}>
         <Row>
           <Col sm={4}>
 
             <ListGroup>
               {
-                refugeesInfo.data.map((refugee) => {
+                refugeesInfo.data.map((refugee, index) => {
                   const url = `#${refugee._id}`;
-                  return (
-                    <ListGroup.Item variant="secondary" action href={url} key={refugee._id}>
-                      {refugee.firstName} {refugee.lastName}
-                    </ListGroup.Item>
-                  )
+                  if (index >= (PaginationValue * (pagination - 1)) && index < (PaginationValue * pagination)) {
+                    return (
+                      <ListGroup.Item variant="secondary" action href={url} key={refugee._id}>
+                        {refugee.firstName} {refugee.lastName}
+                      </ListGroup.Item>
+                    )
+                  }
+                  return null;
                 })
               }
             </ListGroup>
@@ -65,7 +76,7 @@ const VolunteerFindHelp = () => {
           <Col sm={8}>
             <Tab.Content>
               {
-                refugeesInfo.data.map((refugee) => {
+                refugeesInfo.data.map((refugee, index) => {
                   const url = `#${refugee._id}`;
                   return (
                     <Tab.Pane eventKey={url} className="information" key={refugee._id}>
@@ -101,6 +112,9 @@ const VolunteerFindHelp = () => {
             </Tab.Content>
           </Col>
         </Row>
+      </Tab.Container>
+      <Tab.Container>
+        <PaginationBasic totalPagination={refugeesInfo.data.length} setPagination={setPagination} />
       </Tab.Container>
     </Container>
   )
