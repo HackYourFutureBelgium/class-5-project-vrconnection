@@ -1,7 +1,7 @@
 /* eslint-disable prefer-destructuring */
 /* eslint-disable react/prop-types */
 
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import {
   Container,
@@ -9,12 +9,16 @@ import {
   Col,
   Row,
   Button,
+  Modal,
 } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import useForm from 'react-hook-form';
 import API_URL from '../../api';
 import RefugeeRegisterInfo from './RefugeeRegisterInfo';
+import countriesAndLanguage from '../../data/countriesAndLanguage.json';
 
 const RefugeeRegister = ({ setError }) => {
+  const [signUp, setSignUp] = useState(false);
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (
     {
@@ -37,6 +41,7 @@ const RefugeeRegister = ({ setError }) => {
       .catch((err) => {
         setError(err)
       })
+    setSignUp(true);
   }
 
   return (
@@ -46,6 +51,20 @@ const RefugeeRegister = ({ setError }) => {
 
         <Container className="border border-primary">
           <h1 className="pb-2">Refugee Registration Form</h1>
+          {signUp ? (
+            <Modal show animation={false}>
+              <Modal.Header>
+                <Modal.Title>Registered Sucessfully</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                Thank you for Registering
+                click log in
+              </Modal.Body>
+              <Modal.Footer>
+                <Link to="/login" className="btn btn-primary">OK</Link>
+              </Modal.Footer>
+            </Modal>
+          ) : null }
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Row>
               <Form.Group as={Col} controlId="formGridFirstName">
@@ -130,8 +149,9 @@ const RefugeeRegister = ({ setError }) => {
                   name="country"
                   ref={register}
                 >
-                  <option>Country one</option>
-                  <option>Country two</option>
+                  {countriesAndLanguage.map((country) => (
+                    <option>{country.Name}</option>
+                  ))}
                 </Form.Control>
               </Form.Group>
 
@@ -141,9 +161,11 @@ const RefugeeRegister = ({ setError }) => {
                   as="select"
                   name="language"
                   ref={register}
+                  defaultValue="English"
                 >
-                  <option>Language one</option>
-                  <option>Language two</option>
+                  {countriesAndLanguage.map((country) => (
+                    <option>{country.Language}</option>
+                  ))}
                 </Form.Control>
               </Form.Group>
 
@@ -184,7 +206,8 @@ const RefugeeRegister = ({ setError }) => {
                     ref={register({ required: true })}
                   >
                     <option>male</option>
-                    <option>Gender two</option>
+                    <option>female</option>
+                    <option>other</option>
                   </Form.Control>
                 </Col>
                 <p className="input_errors">{errors.gender && 'gender is required'}</p>
@@ -195,6 +218,7 @@ const RefugeeRegister = ({ setError }) => {
               Submit
             </Button>
           </Form>
+          <p>already registered ? click <a href="/login">Log in</a></p>
         </Container>
       </Col>
     </Row>
