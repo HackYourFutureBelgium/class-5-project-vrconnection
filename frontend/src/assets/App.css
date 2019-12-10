@@ -13,7 +13,6 @@
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 5px;
-
 }
 .brand_logo_container {
   position: absolute;
@@ -37,27 +36,31 @@
 .login_btn {
   width: 100%;
   background: #c0392b !important;
-  color: white ;
+  color: white;
 }
 .login_btn:focus {
-  box-shadow: none ;
-  outline: 0px ;
+  box-shadow: none;
+  outline: 0px;
 }
 .login_container {
   padding: 0 2rem;
 }
 .input-group-text {
-  background: #c0392b ;
-  color: white ;
-  border: 0 ;
-  border-radius: 0.25rem 0 0 0.25rem ;
+  background: #c0392b;
+  color: white;
+  border: 0;
+  border-radius: 0.25rem 0 0 0.25rem;
 }
 .input_user,
 .input_pass:focus {
-  box-shadow: none ;
-  outline: 0px ;
+  box-shadow: none;
+  outline: 0px;
 }
 .input_errors {
   color: red;
   font-size: smaller;
+}
+.information {
+  height: 22rem;
+  overflow: auto;
 }
