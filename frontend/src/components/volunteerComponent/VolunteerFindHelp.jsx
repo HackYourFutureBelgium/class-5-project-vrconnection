@@ -54,7 +54,6 @@ const VolunteerFindHelp = () => {
       })
   }
   if (refugeesInfo.status === 'loaded') {
-    console.log(refugeesInfoFilter);
     return (
       <Container className="mb-4 pt-4">
         <Tab.Container>
