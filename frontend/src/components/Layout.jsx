@@ -14,6 +14,7 @@ import RefugeeRegister from './refugeeComponent/RefugeeRegister';
 import RefugeeProfile from './refugeeComponent/RefugeeProfile';
 import VolunteerRegister from './volunteerComponent/VolunteerRegister';
 import VolunteerProfile from './volunteerComponent/VolunteerProfile';
+import VolunteerFindHelp from './volunteerComponent/VolunteerFindHelp';
 
 const Layout = () => {
   const [error, setError] = useState();
@@ -22,8 +23,8 @@ const Layout = () => {
       <Row>
         <Col lg={12}><Menu /></Col>
       </Row>
-      <Switch>
-        <Row>
+      <Row>
+        <Switch>
           <Route path="/" exact>
             <Col sm={6}><About /></Col>
             <Col sm={6}><Aside /></Col>
@@ -40,11 +41,14 @@ const Layout = () => {
           <Route path="/volunteers/profile" exact>
             <Col sm={12}><VolunteerProfile /></Col>
           </Route>
+          <Route path="/volunteers/findHelp" exact>
+            <Col sm={12}><VolunteerFindHelp /></Col>
+          </Route>
           <Route path="/login" exact>
             <Col sm={12}><LoginComponent /></Col>
           </Route>
-        </Row>
-      </Switch>
+        </Switch>
+      </Row>
       <Row>
         <Col sm={12}><Footer /> </Col>
       </Row>
