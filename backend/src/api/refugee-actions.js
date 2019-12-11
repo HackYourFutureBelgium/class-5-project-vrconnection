@@ -29,11 +29,13 @@ const createRefugee = async (req, res) => {
     gender: req.body.gender,
     age: req.body.age,
     email: req.body.email,
+    help:req.body.help,
     phoneNumber: req.body.phoneNumber,
     country: req.body.country,
     language: req.body.language,
     username: req.body.username,
-    password: req.body.password
+    password: req.body.password,
+    description:req.body.description,
   })
 
   try {
