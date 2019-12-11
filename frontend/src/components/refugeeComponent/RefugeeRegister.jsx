@@ -1,7 +1,7 @@
 /* eslint-disable prefer-destructuring */
 /* eslint-disable react/prop-types */
 
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import {
   Container,
@@ -14,8 +14,11 @@ import {
 import useForm from 'react-hook-form';
 import API_URL from '../../api';
 import RefugeeRegisterInfo from './RefugeeRegisterInfo';
+import countriesAndLanguage from '../../data/countriesAndLanguage.json';
+import SubmitConfirmation from './SubmitConfirmation';
 
 const RefugeeRegister = ({ setError }) => {
+  const [signUp, setSignUp] = useState(false);
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = ({
     firstName,
@@ -57,6 +60,7 @@ const RefugeeRegister = ({ setError }) => {
       .catch((err) => {
         setError(err);
       });
+    setSignUp(true);
   };
 
   return (
@@ -183,16 +187,23 @@ const RefugeeRegister = ({ setError }) => {
                   <Form.Group as={Col} controlId="formGridCountry">
                     <Form.Label>Country</Form.Label>
                     <Form.Control as="select" name="country" ref={register}>
-                      <option>Country one</option>
-                      <option>Country two</option>
+                      {countriesAndLanguage.map((country) => (
+                        <option>{country.Name}</option>
+                      ))}
                     </Form.Control>
                   </Form.Group>
 
                   <Form.Group as={Col} controlId="formGridLanguage">
                     <Form.Label>Language</Form.Label>
-                    <Form.Control as="select" name="language" ref={register}>
-                      <option>Language one</option>
-                      <option>Language two</option>
+                    <Form.Control
+                      as="select"
+                      name="language"
+                      ref={register}
+                      defaultValue="English"
+                    >
+                      {countriesAndLanguage.map((country) => (
+                        <option>{country.Language}</option>
+                      ))}
                     </Form.Control>
                   </Form.Group>
                 </Form.Row>
@@ -224,6 +235,8 @@ const RefugeeRegister = ({ setError }) => {
               Submit
             </Button>
           </Form>
+          {signUp ? <SubmitConfirmation /> : null}
+          <p>already registered ? click <a href="/login">Log in</a></p>
         </Container>
       </Col>
     </Row>
