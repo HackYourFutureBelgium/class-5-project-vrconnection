@@ -35,7 +35,7 @@ const createRefugee = async (req, res) => {
     language: req.body.language,
     username: req.body.username,
     password: req.body.password,
-    description:req.body.description,
+    description: req.body.description,
   })
 
   try {
@@ -49,24 +49,31 @@ const createRefugee = async (req, res) => {
 const updateRefugee = async (req, res) => {
   try {
     const refugee = await Refugee.findById(req.params.id);
+    console.log(req.body);
     
     if (refugee === null) return res.status(400).json({ message: 'Can not update refugee' });
     if (req.body.fullName !== null) {
       refugee.fullName = req.body.fullName;
     }
-    if (req.body.age !== null) {
+    if (req.body.age !== undefined) {
       refugee.age = req.body.age;
     }
-    if (req.body.help !== null) {
+    if (req.body.help !== undefined) {
       refugee.help = req.body.help;
     }
-    if (req.body.gender !== null) {
+    if (req.body.gender !== undefined) {
       refugee.gender = req.body.gender;
     }
-    if (req.body.address !== null) {
+    if (req.body.address !== undefined) {
       refugee.address = req.body.address;
     }
-
+    if (req.body.helpStatus !== undefined) {
+      refugee.helpStatus  = req.body.helpStatus;
+    }
+    if (req.body.helpVolunteer !== undefined) {
+      refugee.helpVolunteer = req.body.helpVolunteer;
+    }
+    console.log(refugee);
     const updatedRefugee = await refugee.save();
     res.json(updatedRefugee);
   } catch (error) {

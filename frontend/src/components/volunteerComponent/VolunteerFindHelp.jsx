@@ -37,10 +37,10 @@ const VolunteerFindHelp = () => {
     e.preventDefault();
     const category = e.target.value;
     if (category === 'All') {
-      setRefugeesInfoFilter(orderArray(refugeesInfo.data));
+      setRefugeesInfoFilter(orderArray(refugeesInfo.data.filter((refugee) => refugee.helpStatus === false)));
     } else {
       const filterArray = refugeesInfo.data.filter((element) => element.help.indexOf(category) >= 0);
-      setRefugeesInfoFilter(orderArray(filterArray));
+      setRefugeesInfoFilter(orderArray(filterArray.filter((refugee) => refugee.helpStatus === false)));
       setPagination(1);
     }
   }
@@ -54,7 +54,7 @@ const VolunteerFindHelp = () => {
       })
         .then((result) => {
           setRefugeesInfo({ data: result.data, status: 'loaded' })
-          setRefugeesInfoFilter(orderArray(result.data));
+          setRefugeesInfoFilter(orderArray(result.data.filter((refugee) => refugee.helpStatus === false)));
         })
     }
     if (refugeesInfo.status === 'loaded') {
@@ -88,7 +88,7 @@ const VolunteerFindHelp = () => {
               </Col>
             </Row>
           </Tab.Container>
-          <VolunteerFindListRefugees PaginationValue={PaginationValue} pagination={pagination} refugeesInfoFilter={refugeesInfoFilter} />
+          <VolunteerFindListRefugees PaginationValue={PaginationValue} pagination={pagination} refugeesInfoFilter={refugeesInfoFilter} setRefugeesInfo={setRefugeesInfo} />
           <Tab.Container>
             <Row>
               <Col sm={10}>
