@@ -82,7 +82,8 @@ class VolunteerManager {
   findVolunteerEmail(email) {
     return Volunteer.findOne({ email })
   }
-  findVolunteerUsername(username) {
+
+   findVolunteerUsername(username) {
     return Volunteer.findOne({ username })
   }
   addVolunteer(body) {
