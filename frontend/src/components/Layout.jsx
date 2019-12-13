@@ -16,6 +16,7 @@ import { AuthProvider } from './Auth';
 import PrivateRoute from './PrivateRoute';
 import RefugeeRegister from './refugeeComponent/RefugeeRegister';
 import RefugeeProfile from './refugeeComponent/RefugeeProfile';
+import VolunteerHistory from './volunteerComponent/VolunteerHistory';
 import VolunteerRegister from './volunteerComponent/VolunteerRegister';
 import VolunteerProfile from './volunteerComponent/VolunteerProfile';
 import VolunteerFindHelp from './volunteerComponent/VolunteerFindHelp';
@@ -48,6 +49,9 @@ const Layout = () => {
             </PrivateRoute>
             <Route exact path="/volunteers/findHelp">
               <Col sm={12}><VolunteerFindHelp /></Col>
+            </Route>
+            <Route exact path="/volunteers/history">
+              <Col sm={12}><VolunteerHistory /></Col>
             </Route>
             <Route exact path="/login">
               <Col sm={12}><LoginComponent /></Col>

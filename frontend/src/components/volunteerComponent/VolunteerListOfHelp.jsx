@@ -12,48 +12,13 @@ import {
   Tab,
   Card,
   Badge,
-  Form,
-  Button,
 } from 'react-bootstrap';
-import { AuthContext } from '../Auth';
-import SubmitConfirmationVolunteerHelp from './SubmitConfirmationVolunteerHelp';
-import API_URL from '../../api';
 
-const VolunteerFindListRefugees = ({
+const VolunteerListOfHelp = ({
   PaginationValue,
   pagination,
   refugeesInfoFilter,
-  setRefugeesInfo,
-}) => {
-  const { register, handleSubmit } = useForm();
-  const { registeredVolunteer } = useContext(AuthContext);
-  const [updateRefugee, setUpdateRefugee] = useState(false);
-  const onSubmit = ({
-    volunterId,
-    refugeeId,
-  }) => {
-    const helpStatus = true;
-    const helpVolunteer = volunterId;
-    axios
-      .patch(
-        `${API_URL()}/refugee/${refugeeId}`,
-        {
-          helpStatus,
-          helpVolunteer,
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        },
-      )
-      .then((result) => setUpdateRefugee(true))
-      .catch((err) => {
-        setUpdateRefugee(false);
-      });
-  };
-
-  return (
+}) => (
     <Tab.Container id="list-group">
       <Row>
         <Col sm={4}>
@@ -104,20 +69,6 @@ const VolunteerFindListRefugees = ({
                         <Card.Text>
                           {refugee.description}<br />
                         </Card.Text>
-                        <Card.Title>Can you help?  </Card.Title>
-                        <Card.Text>
-                          If you can help, Clic in the next button and the information will be save in your history:
-                        </Card.Text>
-                        <Card.Title>
-                          <Form onSubmit={handleSubmit(onSubmit)}>
-                            <input name="volunterId" type="hidden" value={registeredVolunteer._id} ref={register({ required: true })} />
-                            <input name="refugeeId" type="hidden" value={refugee._id} ref={register({ required: true })} />
-                            <Button disabled={refugee.helpStatus} type="submit" className="btn btn-primary mx-auto d-block mt-4">
-                              Help
-                            </Button>
-                          </Form>
-                          {updateRefugee ? <SubmitConfirmationVolunteerHelp setRefugeesInfo={setRefugeesInfo} /> : null}
-                        </Card.Title>
                       </Card.Body>
                     </Card>
                   </Tab.Pane>
@@ -128,6 +79,6 @@ const VolunteerFindListRefugees = ({
         </Col>
       </Row>
     </Tab.Container>
-  )
-}
-export default VolunteerFindListRefugees;
+)
+
+export default VolunteerListOfHelp;
