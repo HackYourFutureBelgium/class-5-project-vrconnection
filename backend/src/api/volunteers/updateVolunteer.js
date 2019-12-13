@@ -6,13 +6,7 @@ function updateVolunteer(request, response) {
   Promise.resolve()
     .then(() => {
       const id = request.params.id;
-      const { username, name, email, help, city, age, gender } = request.body;
-
-      if (username !== undefined && typeof username !== 'string') {
-        const error = new Error('username  is not valid');
-        error.code = 'bad-request';
-        throw error;
-      }
+      const { name, email, help, city, age, gender } = request.body;
 
       if (name !== undefined && typeof name !== 'string') {
         const error = new Error('name  is not valid');
