@@ -4,7 +4,7 @@ const
     getRefugee,
     createRefugee,
     updateRefugee,
-    deleteRefuge
+    deleteRefuge,
   } = require('./refugee-actions');
 
 const REFUGEE = `refugee`

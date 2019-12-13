@@ -18,7 +18,7 @@ const LoginComponent = () => {
           .auth()
           .signInWithEmailAndPassword(email.value, password.value);
       } catch (error) {
-        alert('Sorry your not register yet!..');
+        alert('Sorry your not register yet or your password is wrong!..');
       }
     },
     [],

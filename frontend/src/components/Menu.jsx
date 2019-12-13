@@ -16,9 +16,9 @@ const PrivateMenu = () => (
   </>
 )
 
-
 const Menu = () => {
   const { currentUser } = useContext(AuthContext);
+  const email = currentUser ? currentUser.email : null;
 
   return (
     <Navbar collapseOnSelect expand="sm" variant="dark" bg="dark" text="white">
@@ -33,6 +33,7 @@ const Menu = () => {
           {currentUser ? <Nav.Link href="/logout">Log Out</Nav.Link> : null}
         </Nav>
       </Navbar.Collapse>
+      {currentUser ? <div className="email"> {email}</div> : null}
     </Navbar>
   )
 };

@@ -2,17 +2,26 @@
 /* eslint-disable prefer-destructuring */
 /* eslint-disable react/prop-types */
 
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import {
   Form, Button, Card, Row, Col, Alert,
 } from 'react-bootstrap';
 import API_URL from '../../api';
+import { AuthContext } from '../Auth';
 
 function VolunteerRegistrationForm({ formVolunteer, setFormVolunteer }) {
+  const { currentUser } = useContext(AuthContext);
+
+  let emailDefault = '';
+  let email = '';
+  if (currentUser) {
+    emailDefault = currentUser.email;
+    email = emailDefault;
+  }
+
   const [name, setName] = useState('');
   const [username, setUserName] = useState('');
-  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [help, setHelp] = useState([]);
   const [age, setAge] = useState(18);
@@ -26,10 +35,6 @@ function VolunteerRegistrationForm({ formVolunteer, setFormVolunteer }) {
   const handleUserName = (e) => {
     e.preventDefault();
     setUserName(e.target.value);
-  }
-  const handleEmail = (e) => {
-    e.preventDefault();
-    setEmail(e.target.value);
   }
   const handlePassword = (e) => {
     e.preventDefault();
@@ -90,6 +95,9 @@ function VolunteerRegistrationForm({ formVolunteer, setFormVolunteer }) {
           }
           <Card.Body className="text-muted">
             <Form onSubmit={handleSubmit}>
+              <Form.Group controlId="VolunteerEmail">
+                <Form.Label>Email: {emailDefault}  </Form.Label>
+              </Form.Group>
               <Form.Group controlId="VolunteerName">
                 <Form.Label>My Name is </Form.Label>
                 <Form.Control
@@ -110,16 +118,7 @@ function VolunteerRegistrationForm({ formVolunteer, setFormVolunteer }) {
                   onChange={handleUserName}
                 />
               </Form.Group>
-              <Form.Group controlId="VolunteerEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control
-                  required
-                  type="email"
-                  laceholder="Enter email"
-                  value={email}
-                  onChange={handleEmail}
-                />
-              </Form.Group>
+
               <Form.Group controlId="VolunteerPassword">
                 <Form.Label>Password</Form.Label>
                 <Form.Control
