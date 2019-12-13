@@ -42,18 +42,6 @@ const refugeeSchema = new mongoose.Schema({
     type: String,
     lowercase: true
   },
-  username: {
-    type: String,
-    lowercase: true,
-    required : true,
-    trim : true,
-    unique : true
-  },
-  password: {
-    type : String,
-    required : true,
-    trim : true,
-  },
   registeredDate: {
     type: Date,
     required: true,
@@ -68,6 +56,13 @@ const refugeeSchema = new mongoose.Schema({
   description: {
     type: String
   },
+  helpStatus:{
+    type: Boolean,
+    "default": false
+  },
+  helpVolunteer:{
+    type:  String,
+    }
 });
 
 module.exports = mongoose.model('Refugee', refugeeSchema);

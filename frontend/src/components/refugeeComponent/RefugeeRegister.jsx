@@ -23,8 +23,6 @@ const RefugeeRegister = ({ setError }) => {
   const onSubmit = ({
     firstName,
     lastName,
-    username,
-    password,
     email,
     phoneNumber,
     country,
@@ -40,8 +38,6 @@ const RefugeeRegister = ({ setError }) => {
         {
           firstName,
           lastName,
-          username,
-          password,
           email,
           phoneNumber,
           country,
@@ -98,30 +94,6 @@ const RefugeeRegister = ({ setError }) => {
                     <p className="input_errors">{errors.lastName && 'Last Name required'}</p>
                   </Form.Group>
                 </Form.Row>
-                <Form.Row>
-                  <Form.Group as={Col} controlId="formGridUsername">
-                    <Form.Label>Username</Form.Label>
-                    <Form.Control
-                      type="text"
-                      name="username"
-                      placeholder="username"
-                      ref={register({ required: true })}
-                    />
-                    <p className="input_errors">{errors.username && 'Username required'}</p>
-                  </Form.Group>
-
-                  <Form.Group as={Col} controlId="formGridPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control
-                      type="password"
-                      name="password"
-                      placeholder="Password"
-                      ref={register({ required: true })}
-                    />
-                    <p className="input_errors">{errors.password && 'password required'}</p>
-                  </Form.Group>
-                </Form.Row>
-
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridAge">
                     <Form.Label>

@@ -4,7 +4,7 @@ const ObjectId = require('mongoose').Types.ObjectId
 class VolunteerManager {
 
   async create(body) {
-    const { email, username } = body;
+    const { email} = body;
     // Validation of conflicts
     let volunteer = await this.findVolunteerEmail(email);
     if (volunteer) {
@@ -12,13 +12,7 @@ class VolunteerManager {
       error.code = 'conflict';
       throw error;
     }
-    volunteer = await this.findVolunteerUsername(username);
-    if (volunteer) {
-      const error = new Error('There is an volunteer with this username');
-      error.code = 'conflict';
-      throw error;
-    }
-    // Create volunteer
+     // Create volunteer
     return this.addVolunteer(body)
   }
 
@@ -46,17 +40,7 @@ class VolunteerManager {
 
   async update(id, body) {
     let volunteer = await this.get(id);
-    const { username, name, email, help, age, gender, city } = body;
-
-    // Validation of conflicts
-    if (username !== undefined) {
-      volunteer = await this.findVolunteerUsername(username);
-      if (volunteer) {
-        const error = new Error('The new username is being used by other volunteer');
-        error.code = 'conflict';
-        throw error;
-      }
-    }
+    const { name, email, help, age, gender, city } = body;
 
     if (email !== undefined) {
       volunteer = await this.findVolunteerEmail(email);
@@ -67,7 +51,7 @@ class VolunteerManager {
       }
     }
 
-    await this.updateVolunteer(id, username, name, email, help, age, gender, city);
+    await this.updateVolunteer(id, name, email, help, age, gender, city);
     return this.get(id);
   }
 
@@ -83,9 +67,6 @@ class VolunteerManager {
     return Volunteer.findOne({ email })
   }
 
-   findVolunteerUsername(username) {
-    return Volunteer.findOne({ username })
-  }
   addVolunteer(body) {
     const newVolunteer = new Volunteer(body);
     return newVolunteer.save();
@@ -96,10 +77,9 @@ class VolunteerManager {
   findVolunteers() {
     return Volunteer.find();
   }
-  async updateVolunteer(id, username, name, email, help, age, gender, city) {
+  async updateVolunteer(id,name, email, help, age, gender, city) {
     let volunteer = await this.get(id);
     let volunterNewData = {
-      username: username === undefined ? volunteer.username : username,
       name: name === undefined ? volunteer.name : name,
       email: email === undefined ? volunteer.email : email,
       help: help === undefined ? volunteer.help : help,
