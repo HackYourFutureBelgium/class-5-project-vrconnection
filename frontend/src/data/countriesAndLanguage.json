@@ -1,0 +1,690 @@
+[
+  {
+    "Name": "Afghanistan",
+    "Language": "Pashto"
+  },
+  {
+    "Name": "Albania",
+    "Language": "Albanian"
+  },
+  {
+    "Name": "Algeria",
+    "Language": "Arabic, Algerian Spoken"
+  },
+  {
+    "Name": "Angola",
+    "Language": "Mbundu"
+  },
+  {
+    "Name": "Argentina",
+    "Language": "Quechua, South Bolivian"
+  },
+  {
+    "Name": "Armenia",
+    "Language": "Armenian"
+  },
+  {
+    "Name": "Australia",
+    "Language": "Australian"
+  },
+  {
+    "Name": "Austria",
+    "Language": "Bavarian"
+  },
+  {
+    "Name": "Azerbaijan",
+    "Language": "Azerbaijani, North"
+  },
+  {
+    "Name": "Bahrain",
+    "Language": "Arabic, Baharna Spoken"
+  },
+  {
+    "Name": "Bangladesh",
+    "Language": "Bengali"
+  },
+  {
+    "Name": "Belarus",
+    "Language": "Belarusan"
+  },
+  {
+    "Name": "Belgium",
+    "Language": "Flemmish"
+  },
+  {
+    "Name": "Belize",
+    "Language": "Mayan"
+  },
+  {
+    "Name": "Benin",
+    "Language": "Fon"
+  },
+  {
+    "Name": "Bhutan",
+    "Language": "Dzonghka"
+  },
+  {
+    "Name": "Bolivia",
+    "Language": "South Bolivian Quechuan"
+  },
+  {
+    "Name": "Bosnia and Herzegovina",
+    "Language": "Bosnian"
+  },
+  {
+    "Name": "Botswana",
+    "Language": "Kalanga"
+  },
+  {
+    "Name": "Brazil",
+    "Language": "Tupi-Guarani"
+  },
+  {
+    "Name": "Bulgaria",
+    "Language": "Bulgarian"
+  },
+  {
+    "Name": "Burkina Faso",
+    "Language": "M�OR�"
+  },
+  {
+    "Name": "Burundi",
+    "Language": "Rundi"
+  },
+  {
+    "Name": "Cambodia",
+    "Language": "Khmer, Central"
+  },
+  {
+    "Name": "Cameroon",
+    "Language": "Beti"
+  },
+  {
+    "Name": "Canada",
+    "Language": "Central Algonquian"
+  },
+  {
+    "Name": "Cape Verde",
+    "Language": "No descendants of 1500 pop"
+  },
+  {
+    "Name": "Central African Republic",
+    "Language": "Manza"
+  },
+  {
+    "Name": "Chad",
+    "Language": "Ngambay"
+  },
+  {
+    "Name": "Chile",
+    "Language": "Mapudungun"
+  },
+  {
+    "Name": "China",
+    "Language": "Mandarin Chinese"
+  },
+  {
+    "Name": "Colombia",
+    "Language": "Chibchan"
+  },
+  {
+    "Name": "Comoros",
+    "Language": "Comorian"
+  },
+  {
+    "Name": "Congo, Dem. Rep.",
+    "Language": "Luba-Kasai"
+  },
+  {
+    "Name": "Congo, Rep.",
+    "Language": "Koongo"
+  },
+  {
+    "Name": "Cook Islands",
+    "Language": "Rarotongan"
+  },
+  {
+    "Name": "Costa Rica",
+    "Language": "Bribi"
+  },
+  {
+    "Name": "Cote d'Ivoire",
+    "Language": "Senoufo, Cebaara"
+  },
+  {
+    "Name": "Croatia",
+    "Language": "Croatian"
+  },
+  {
+    "Name": "Cuba",
+    "Language": "No descendants of 1500 pop"
+  },
+  {
+    "Name": "Cyprus",
+    "Language": "Greek"
+  },
+  {
+    "Name": "Czech Republic",
+    "Language": "Czech"
+  },
+  {
+    "Name": "Denmark",
+    "Language": "Danish"
+  },
+  {
+    "Name": "Dominican Republic",
+    "Language": "No descendants of 1500 pop"
+  },
+  {
+    "Name": "East Timor",
+    "Language": "Tetun"
+  },
+  {
+    "Name": "Ecuador",
+    "Language": "Chimborazo Highland Quichua"
+  },
+  {
+    "Name": "Egypt, Arab Rep.",
+    "Language": "Arabic, Egyptian Spoken"
+  },
+  {
+    "Name": "El Salvador",
+    "Language": "Pipil"
+  },
+  {
+    "Name": "Equatorial Guinea",
+    "Language": "Bube"
+  },
+  {
+    "Name": "Eritrea",
+    "Language": "Tigrinya"
+  },
+  {
+    "Name": "Estonia",
+    "Language": "Estonian"
+  },
+  {
+    "Name": "Ethiopia",
+    "Language": "Oromo"
+  },
+  {
+    "Name": "Fiji",
+    "Language": "Fijian"
+  },
+  {
+    "Name": "Finland",
+    "Language": "Finnish"
+  },
+  {
+    "Name": "France",
+    "Language": "French"
+  },
+  {
+    "Name": "Gabon",
+    "Language": "Mbere "
+  },
+  {
+    "Name": "Gambia",
+    "Language": "Mandinka"
+  },
+  {
+    "Name": "Georgia",
+    "Language": "Georgian"
+  },
+  {
+    "Name": "Germany",
+    "Language": "Standard German"
+  },
+  {
+    "Name": "Ghana",
+    "Language": "Akan"
+  },
+  {
+    "Name": "Greece",
+    "Language": "Greek"
+  },
+  {
+    "Name": "Guatemala",
+    "Language": "Central K'iche' (Mayan)"
+  },
+  {
+    "Name": "Guinea",
+    "Language": "Maninka"
+  },
+  {
+    "Name": "Guinea-Bissau",
+    "Language": "Pulaar"
+  },
+  {
+    "Name": "Guyana",
+    "Language": "Carib"
+  },
+  {
+    "Name": "Haiti",
+    "Language": "No descendants of 1500 pop"
+  },
+  {
+    "Name": "Honduras",
+    "Language": "Lenca"
+  },
+  {
+    "Name": "Hong Kong, China",
+    "Language": "No descendants of 1500 pop"
+  },
+  {
+    "Name": "Hungary",
+    "Language": "Hungarian"
+  },
+  {
+    "Name": "Iceland",
+    "Language": "Icelandic"
+  },
+  {
+    "Name": "India",
+    "Language": "Hindi"
+  },
+  {
+    "Name": "Indonesia",
+    "Language": "Javanese"
+  },
+  {
+    "Name": "Iran, Islamic Rep.",
+    "Language": "Farsi"
+  },
+  {
+    "Name": "Iraq",
+    "Language": "Arabic"
+  },
+  {
+    "Name": "Ireland",
+    "Language": "Irish"
+  },
+  {
+    "Name": "Israel/Palestine",
+    "Language": "Arabic"
+  },
+  {
+    "Name": "Italy",
+    "Language": "Italian"
+  },
+  {
+    "Name": "Jamaica",
+    "Language": "No descendants of 1500 pop"
+  },
+  {
+    "Name": "Japan",
+    "Language": "Japanese"
+  },
+  {
+    "Name": "Jordan",
+    "Language": "Arabic"
+  },
+  {
+    "Name": "Kazakhstan",
+    "Language": "Kazah"
+  },
+  {
+    "Name": "Kenya",
+    "Language": "Kikuyu"
+  },
+  {
+    "Name": "Korea, Dem. Rep. (North)",
+    "Language": "Korean"
+  },
+  {
+    "Name": "Korea, Rep. (South)",
+    "Language": "Korean"
+  },
+  {
+    "Name": "Kuwait",
+    "Language": "Arabic"
+  },
+  {
+    "Name": "Kyrgyzstan",
+    "Language": "Kirgyz"
+  },
+  {
+    "Name": "Laos",
+    "Language": "Lao"
+  },
+  {
+    "Name": "Latvia",
+    "Language": "Latvian"
+  },
+  {
+    "Name": "Lebanon",
+    "Language": "Arabic"
+  },
+  {
+    "Name": "Lesotho",
+    "Language": "Sotho, Southern"
+  },
+  {
+    "Name": "Liberia",
+    "Language": "Liberia Kpelle"
+  },
+  {
+    "Name": "Libya ",
+    "Language": "Arabic"
+  },
+  {
+    "Name": "Lithuania",
+    "Language": "Lithuanian"
+  },
+  {
+    "Name": "Luxembourg",
+    "Language": "Luxembourgeois"
+  },
+  {
+    "Name": "Macedonia",
+    "Language": "Macedonian"
+  },
+  {
+    "Name": "Madagascar",
+    "Language": "Malagasy"
+  },
+  {
+    "Name": "Malawi",
+    "Language": "Nyanja"
+  },
+  {
+    "Name": "Malaysia",
+    "Language": "Malay"
+  },
+  {
+    "Name": "Mali",
+    "Language": "Maninka"
+  },
+  {
+    "Name": "Malta",
+    "Language": "Maltese"
+  },
+  {
+    "Name": "Mauritania",
+    "Language": "Hassaniyya Arabic"
+  },
+  {
+    "Name": "Mauritius",
+    "Language": "No descendants of 1500 pop"
+  },
+  {
+    "Name": "Mexico",
+    "Language": "Nahuatl"
+  },
+  {
+    "Name": "Moldova",
+    "Language": "Romanian"
+  },
+  {
+    "Name": "Mongolia",
+    "Language": "Mongolian, Halh"
+  },
+  {
+    "Name": "Morocco",
+    "Language": "Arabic"
+  },
+  {
+    "Name": "Mozambique",
+    "Language": "Makhuwa"
+  },
+  {
+    "Name": "Myanmar",
+    "Language": "Burmese"
+  },
+  {
+    "Name": "Namibia",
+    "Language": "Hai||om"
+  },
+  {
+    "Name": "Nepal",
+    "Language": "Nepali"
+  },
+  {
+    "Name": "Netherlands",
+    "Language": "Dutch"
+  },
+  {
+    "Name": "New Zealand",
+    "Language": "Maori"
+  },
+  {
+    "Name": "Nicaragua",
+    "Language": "Miskito"
+  },
+  {
+    "Name": "Niger",
+    "Language": "Hausa"
+  },
+  {
+    "Name": "Nigeria",
+    "Language": "Hausa"
+  },
+  {
+    "Name": "Niue",
+    "Language": "Samoan"
+  },
+  {
+    "Name": "Norway",
+    "Language": "Norwegian, Bokmaal"
+  },
+  {
+    "Name": "Oman",
+    "Language": "Arabic"
+  },
+  {
+    "Name": "Pakistan",
+    "Language": "Panjabi, Western"
+  },
+  {
+    "Name": "Panama",
+    "Language": "Ngabere"
+  },
+  {
+    "Name": "Papua New Guinea",
+    "Language": "Papuan"
+  },
+  {
+    "Name": "Paraguay",
+    "Language": "Guaran�"
+  },
+  {
+    "Name": "Peru",
+    "Language": "Cusco Quechua"
+  },
+  {
+    "Name": "Philippines",
+    "Language": "Tagalog"
+  },
+  {
+    "Name": "Poland",
+    "Language": "Polish"
+  },
+  {
+    "Name": "Portugal",
+    "Language": "Portuguese"
+  },
+  {
+    "Name": "Puerto Rico",
+    "Language": "No descendants of 1500 pop"
+  },
+  {
+    "Name": "Qatar",
+    "Language": "No descendants of 1500 pop"
+  },
+  {
+    "Name": "Romania",
+    "Language": "Romanian"
+  },
+  {
+    "Name": "Russia",
+    "Language": "Russian"
+  },
+  {
+    "Name": "Rwanda",
+    "Language": "Rwanda"
+  },
+  {
+    "Name": "Saint Vincent and the Grenadines",
+    "Language": "Island Carib"
+  },
+  {
+    "Name": "Samoa",
+    "Language": "Samoan"
+  },
+  {
+    "Name": "Sao Tome and Principe ",
+    "Language": "No descendants of 1500 pop"
+  },
+  {
+    "Name": "Saudi Arabia",
+    "Language": "Arabic"
+  },
+  {
+    "Name": "Senegal",
+    "Language": "Wolof"
+  },
+  {
+    "Name": "Serbia and Montenegro",
+    "Language": "Serbian"
+  },
+  {
+    "Name": "Sierra Leone",
+    "Language": "Temne"
+  },
+  {
+    "Name": "Singapore",
+    "Language": "No descendants of 1500 pop"
+  },
+  {
+    "Name": "Slovakia",
+    "Language": "Slovak"
+  },
+  {
+    "Name": "Slovenia",
+    "Language": "Slovenian"
+  },
+  {
+    "Name": "Somalia",
+    "Language": "Somali"
+  },
+  {
+    "Name": "South Africa",
+    "Language": "Zulu"
+  },
+  {
+    "Name": "Spain",
+    "Language": "Spanish"
+  },
+  {
+    "Name": "Sri Lanka",
+    "Language": "Sinhala"
+  },
+  {
+    "Name": "Sudan",
+    "Language": "Arabic"
+  },
+  {
+    "Name": "Swaziland",
+    "Language": "No descendants of 1500 pop"
+  },
+  {
+    "Name": "Sweden",
+    "Language": "Swedish"
+  },
+  {
+    "Name": "Switzerland",
+    "Language": "Swiss German"
+  },
+  {
+    "Name": "Syrian Arab Republic",
+    "Language": "Arabic"
+  },
+  {
+    "Name": "Taiwan, China",
+    "Language": "Amis"
+  },
+  {
+    "Name": "Tajikistan",
+    "Language": "Tajiki"
+  },
+  {
+    "Name": "Tanzania",
+    "Language": "Sukuma"
+  },
+  {
+    "Name": "Thailand",
+    "Language": "Thai"
+  },
+  {
+    "Name": "Togo",
+    "Language": "Ewe"
+  },
+  {
+    "Name": "Tonga",
+    "Language": "Tongan"
+  },
+  {
+    "Name": "Trinidad and Tobago",
+    "Language": "No descendants of 1500 pop"
+  },
+  {
+    "Name": "Tunisia",
+    "Language": "Arabic"
+  },
+  {
+    "Name": "Turkey",
+    "Language": "Turkish"
+  },
+  {
+    "Name": "Turkmenistan",
+    "Language": "Turkmen"
+  },
+  {
+    "Name": "Uganda",
+    "Language": "Ganda"
+  },
+  {
+    "Name": "Ukraine",
+    "Language": "Ukrainian"
+  },
+  {
+    "Name": "United Arab Emirates",
+    "Language": "Arabic"
+  },
+  {
+    "Name": "United Kingdom",
+    "Language": "English"
+  },
+  {
+    "Name": "United States",
+    "Language": "Cherokee"
+  },
+  {
+    "Name": "Uruguay",
+    "Language": "Tupi-Guaran� "
+  },
+  {
+    "Name": "Uzbekistan",
+    "Language": "Uzbek"
+  },
+  {
+    "Name": "Venezuela",
+    "Language": "Wayuu"
+  },
+  {
+    "Name": "Vietnam",
+    "Language": "Vietnamese"
+  },
+  {
+    "Name": "Yemen",
+    "Language": "Arabic"
+  },
+  {
+    "Name": "Zambia",
+    "Language": "Nyanja"
+  },
+  {
+    "Name": "Zimbabwe",
+    "Language": "Shona"
+  }
+]
