@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import React, { useContext } from 'react';
+import React, { useContext, error } from 'react';
 import axios from 'axios';
 import {
   Container,
@@ -56,7 +56,7 @@ const RefugeeProfile = ({ setError }) => {
       </Row>
     )
   } return (
-    <RefugeeRegister />
+    <RefugeeRegister setError={setError} error={error} />
   )
 }
 

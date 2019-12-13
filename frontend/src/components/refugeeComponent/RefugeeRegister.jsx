@@ -160,7 +160,7 @@ const RefugeeRegister = ({ setError }) => {
                     <Form.Label>Country</Form.Label>
                     <Form.Control as="select" name="country" ref={register}>
                       {countriesAndLanguage.map((country) => (
-                        <option>{country.Name}</option>
+                        <option key={country.Name}>{country.Name}</option>
                       ))}
                     </Form.Control>
                   </Form.Group>
@@ -174,7 +174,7 @@ const RefugeeRegister = ({ setError }) => {
                       defaultValue="English"
                     >
                       {countriesAndLanguage.map((country) => (
-                        <option>{country.Language}</option>
+                        <option key={country.Name}>{country.Language}</option>
                       ))}
                     </Form.Control>
                   </Form.Group>
