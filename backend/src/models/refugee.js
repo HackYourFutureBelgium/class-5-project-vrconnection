@@ -68,6 +68,13 @@ const refugeeSchema = new mongoose.Schema({
   description: {
     type: String
   },
+  helpStatus:{
+    type: Boolean,
+    "default": false
+  },
+  helpVolunteer:{
+    type:  String,
+    }
 });
 
 module.exports = mongoose.model('Refugee', refugeeSchema);
