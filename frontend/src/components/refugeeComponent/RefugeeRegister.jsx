@@ -36,7 +36,7 @@ const RefugeeRegister = ({ setError }) => {
   }) => {
     axios
       .post(
-        `${API_URL('dev')}/refugee`,
+        `${API_URL()}/refugee`,
         {
           firstName,
           lastName,
