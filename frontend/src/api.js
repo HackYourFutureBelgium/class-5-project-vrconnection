@@ -1,7 +1,7 @@
 const API_URL = () => {
   switch (process.env.NODE_ENV) {
     case 'production':
-      return 'http://localhost:8080/api';
+      return 'https://vrconnection-dot-class-5-project.appspot.com/api/';
     default:
       return 'http://localhost:8080/api';
   }

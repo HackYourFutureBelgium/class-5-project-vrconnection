@@ -65,7 +65,7 @@ function VolunteerRegistrationForm({ formVolunteer, setFormVolunteer }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post(`${API_URL('dev')}/volunteer`, {
+    axios.post(`${API_URL()}/volunteer`, {
       username,
       name,
       email,
