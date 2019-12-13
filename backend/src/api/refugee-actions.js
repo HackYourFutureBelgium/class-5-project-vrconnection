@@ -33,8 +33,6 @@ const createRefugee = async (req, res) => {
     phoneNumber: req.body.phoneNumber,
     country: req.body.country,
     language: req.body.language,
-    username: req.body.username,
-    password: req.body.password,
     description: req.body.description,
   })
 
@@ -73,7 +71,9 @@ const updateRefugee = async (req, res) => {
     if (req.body.helpVolunteer !== undefined) {
       refugee.helpVolunteer = req.body.helpVolunteer;
     }
-    console.log(refugee);
+    if (req.body.description !== undefined) {
+      refugee.description  = req.body.description ;
+    }
     const updatedRefugee = await refugee.save();
     res.json(updatedRefugee);
   } catch (error) {

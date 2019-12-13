@@ -21,8 +21,6 @@ function VolunteerRegistrationForm({ formVolunteer, setFormVolunteer }) {
   }
 
   const [name, setName] = useState('');
-  const [username, setUserName] = useState('');
-  const [password, setPassword] = useState('');
   const [help, setHelp] = useState([]);
   const [age, setAge] = useState(18);
   const [gender, setgender] = useState('male');
@@ -32,14 +30,7 @@ function VolunteerRegistrationForm({ formVolunteer, setFormVolunteer }) {
     e.preventDefault();
     setName(e.target.value);
   }
-  const handleUserName = (e) => {
-    e.preventDefault();
-    setUserName(e.target.value);
-  }
-  const handlePassword = (e) => {
-    e.preventDefault();
-    setPassword(e.target.value);
-  }
+
   const handleHelp = (e) => {
     const options = e.target.options;
     const optionsSelected = [];
@@ -66,7 +57,6 @@ function VolunteerRegistrationForm({ formVolunteer, setFormVolunteer }) {
     e.preventDefault();
 
     axios.post(`${API_URL()}/volunteer`, {
-      username,
       name,
       email,
       help,
@@ -106,27 +96,6 @@ function VolunteerRegistrationForm({ formVolunteer, setFormVolunteer }) {
                   placeholder="Enter your name"
                   value={name}
                   onChange={handleName}
-                />
-              </Form.Group>
-              <Form.Group controlId="VolunteerUserName">
-                <Form.Label>Username</Form.Label>
-                <Form.Control
-                  required
-                  type="text"
-                  placeholder="Enter username"
-                  value={username}
-                  onChange={handleUserName}
-                />
-              </Form.Group>
-
-              <Form.Group controlId="VolunteerPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control
-                  required
-                  type="password"
-                  placeholder="Password"
-                  value={password}
-                  onChange={handlePassword}
                 />
               </Form.Group>
               <Form.Group controlId="VolunteerHelp">

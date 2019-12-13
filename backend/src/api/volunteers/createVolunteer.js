@@ -5,13 +5,7 @@ function createVolunteer(request, response) {
 
   Promise.resolve()
     .then(() => {
-      const { username, email, name, help, age } = request.body;
-
-      if (!username) {
-        const error = new Error('username is required to create volunteer');
-        error.code = 'bad-request';
-        throw error;
-      }
+      const { email, name, help, age } = request.body;
 
       if (!email) {
         const error = new Error('email is required to create volunteer');
