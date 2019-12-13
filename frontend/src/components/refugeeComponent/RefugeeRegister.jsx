@@ -1,7 +1,7 @@
 /* eslint-disable prefer-destructuring */
 /* eslint-disable react/prop-types */
 
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import {
   Container,
@@ -16,14 +16,23 @@ import API_URL from '../../api';
 import RefugeeRegisterInfo from './RefugeeRegisterInfo';
 import countriesAndLanguage from '../../data/countriesAndLanguage.json';
 import SubmitConfirmation from './SubmitConfirmation';
+import { AuthContext } from '../Auth';
 
 const RefugeeRegister = ({ setError }) => {
   const [signUp, setSignUp] = useState(false);
   const { register, handleSubmit, errors } = useForm();
+  const { currentUser } = useContext(AuthContext);
+
+  let emailDefault = '';
+  let email = '';
+  if (currentUser) {
+    emailDefault = currentUser.email;
+    email = emailDefault;
+  }
+
   const onSubmit = ({
     firstName,
     lastName,
-    email,
     phoneNumber,
     country,
     language,
@@ -66,11 +75,16 @@ const RefugeeRegister = ({ setError }) => {
       </Col>
       <Col sm={6}>
         <Container className="border border-primary">
-          <h1 className="pb-2">Refugee Registration </h1>
+          <h1 className="pb-2">Refugee Registration  </h1>
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Card>
               <Card.Header>
-                <h3> Personal Information</h3><hr />
+                <h3> Personal Information  </h3><hr />
+                <Form.Row>
+                  <Form.Group as={Col} controlId="formGridEmail">
+                    <Form.Label>Email: {emailDefault} </Form.Label>
+                  </Form.Group>
+                </Form.Row>
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridFirstName">
                     <Form.Label>First Name</Form.Label>
@@ -125,30 +139,16 @@ const RefugeeRegister = ({ setError }) => {
                 </Form.Row>
 
                 <Form.Row>
-                  <Form.Group as={Col} controlId="formGridEmail">
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control
-                      type="email"
-                      name="email"
-                      placeholder="Email"
-                      ref={register({
-                        required: true,
-                        pattern: {
-                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                        },
-                      })}
-                    />
-                    <p className="input_errors">{errors.email && 'please enter a valid email'}</p>
-                  </Form.Group>
-
                   <Form.Group as={Col} controlId="formGridPhoneNumber">
                     <Form.Label>Phone Number</Form.Label>
-                    <Form.Control
-                      type="number"
-                      name="phoneNumber"
-                      placeholder="Phone Number"
-                      ref={register({ minlength: 8, maxlength: 15 })}
-                    />
+                    <Col sm={6}>
+                      <Form.Control
+                        type="number"
+                        name="phoneNumber"
+                        placeholder="Phone Number"
+                        ref={register({ minlength: 8, maxlength: 15 })}
+                      />
+                    </Col>
                     <p className="input_errors">
                       {errors.phoneNumber && ' please enter valid phone number'}
                     </p>
