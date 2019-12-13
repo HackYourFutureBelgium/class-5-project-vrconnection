@@ -21,27 +21,30 @@ const VolunteerSchema = new Schema({
   },
   city: {
     type: String,
-    default: 'Brussels'
+    default: 'Brussels',
   },
   otherInformation: {
-    type: String
+    type: String,
   },
   registeredDate: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   gender: {
     type: String,
     required: true,
     enum: {
-      values: ['male', 'female', 'other']
+      values: ['male', 'female', 'other'],
     },
-    default: 'male'
+    default: 'male',
   },
   age: {
     type: Number,
     required: true,
   },
-})
+  profileImage: {
+    type: String,
+  },
+});
 
 module.exports = mongoose.model('volunteer', VolunteerSchema);
