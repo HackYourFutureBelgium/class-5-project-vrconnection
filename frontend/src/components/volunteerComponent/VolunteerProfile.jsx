@@ -1,17 +1,20 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable import/no-unresolved */
+/* eslint-disable object-curly-newline */
+/* eslint-disable no-lone-blocks */
+
 import React, { useContext } from 'react';
+import { Container, Row, Tab, Card } from 'react-bootstrap';
 import { AuthContext } from '../Auth';
 import '../../assets/VolunteerProfile.css';
+import banner from '../../assets/images/banner.jpg';
 
 function VolunteerProfile() {
   const { registeredVolunteer } = useContext(AuthContext);
-
   let [name, username, age, gender, city, email, help, registeredDate] = '';
 
   if (registeredVolunteer !== undefined) {
     {
-      console.log(registeredVolunteer);
       name = registeredVolunteer.name;
       username = registeredVolunteer.username;
       age = registeredVolunteer.age;
@@ -25,10 +28,18 @@ function VolunteerProfile() {
 
   return (
     <div className="Container my-3 py-6 text-center">
+      <Container className="mb-4 pt-4">
+        <Tab.Container>
+          <Row>
+            <Card>
+              <Card.Img variant="top" src={banner} />
+            </Card>
+          </Row>
+        </Tab.Container>
+      </Container>
       <div className="row mb-5">
         <div className="col">
-          <h1>VRconnection</h1>
-          <div className="p at-3">Thank You being a part of our community</div>
+          <h1>Thank You being part of our community</h1>
         </div>
       </div>
       <div className="row d-flex justify-content-center">
