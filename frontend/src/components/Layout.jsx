@@ -11,9 +11,8 @@ import Aside from './Aside';
 import Footer from './Footer';
 import LoginComponent from './LoginComponent';
 import SignUp from './SignUp';
-import Logout from './Logout';
 import { AuthProvider } from './Auth';
-import PrivateRoute from './PrivateRoute';
+// import PrivateRoute from './PrivateRoute';
 import RefugeeRegister from './refugeeComponent/RefugeeRegister';
 import RefugeeProfile from './refugeeComponent/RefugeeProfile';
 import RefugeeMyHelp from './refugeeComponent/RefugeeMyHelp';
@@ -32,21 +31,21 @@ const Layout = () => {
         </Row>
         <Row>
           <Switch>
-            <PrivateRoute exact path="/refugees/signup">
+            <Route exact path="/refugees/signup">
               <Col sm={12}><RefugeeRegister setError={setError} error={error} /></Col>
-            </PrivateRoute>
-            <PrivateRoute exact path="/refugees/profile">
+            </Route>
+            <Route exact path="/refugees/profile">
               <Col sm={12}><RefugeeProfile setError={setError} error={error} /></Col>
-            </PrivateRoute>
-            <PrivateRoute exact path="/refugees/myHelp">
+            </Route>
+            <Route exact path="/refugees/myHelp">
               <Col sm={12}><RefugeeMyHelp /></Col>
-            </PrivateRoute>
-            <PrivateRoute exact path="/volunteers/signup">
+            </Route>
+            <Route exact path="/volunteers/signup">
               <Col sm={12}><VolunteerRegister /></Col>
-            </PrivateRoute>
-            <PrivateRoute exact path="/volunteers/profile">
+            </Route>
+            <Route exact path="/volunteers/profile">
               <Col sm={12}><VolunteerProfile /></Col>
-            </PrivateRoute>
+            </Route>
             <Route exact path="/volunteers/findHelp">
               <Col sm={12}><VolunteerFindHelp /></Col>
             </Route>
@@ -58,9 +57,6 @@ const Layout = () => {
             </Route>
             <Route exact path="/signup">
               <SignUp />
-            </Route>
-            <Route exact path="/logout">
-              <Logout />
             </Route>
             <Route path="/">
               <Col sm={6}><About /></Col>

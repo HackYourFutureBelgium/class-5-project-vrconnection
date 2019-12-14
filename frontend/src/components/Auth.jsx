@@ -38,7 +38,6 @@ export const AuthProvider = ({ children }) => {
       })
       .catch((error) => setRegisteredRefugee('no-register'));
   }
-
   app.auth().onAuthStateChanged(setCurrentUser);
   return (
     <AuthContext.Provider
