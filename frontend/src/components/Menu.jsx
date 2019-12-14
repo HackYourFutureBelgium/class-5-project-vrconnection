@@ -4,9 +4,12 @@ import { AuthContext } from './Auth';
 
 const PrivateMenu = () => (
   <>
-    <Nav.Link href="/refugees/profile">Refugee</Nav.Link>
+    <NavDropdown title="Refugee" id="collasible-nav-dropdown">
+      <NavDropdown.Item href="/refugees/profile">My Profile</NavDropdown.Item>
+      <NavDropdown.Item href="/refugees/myHelp">My help</NavDropdown.Item>
+    </NavDropdown>
     <NavDropdown title="Volunteer" id="collasible-nav-dropdown">
-      <NavDropdown.Item href="/volunteers/profile">Profile</NavDropdown.Item>
+      <NavDropdown.Item href="/volunteers/profile">My Profile</NavDropdown.Item>
       <NavDropdown.Item href="/volunteers/findHelp">I want to help</NavDropdown.Item>
       <NavDropdown.Item href="/volunteers/history">My history</NavDropdown.Item>
     </NavDropdown>
