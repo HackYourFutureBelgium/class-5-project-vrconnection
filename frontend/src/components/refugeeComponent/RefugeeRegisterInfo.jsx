@@ -5,12 +5,15 @@ import {
   Image,
   Alert,
 } from 'react-bootstrap';
-import logo from '../../assets/images/refugees-volunteers-friend.jpg';
+import logo from '../../assets/images/friends.png';
 
 const RefugeeRegisterInfo = () => (
   <Container>
-    <h1 className="bd-content">We want to help you.</h1>
+    <h1 className="bd-content">Do you need help?.</h1>
 
+    <p>
+      Say us in detail what you need, the volunteer want to help you.
+    </p>
     <Col xs={6} md={6}>
       <Image src={logo} thumbnail />
     </Col>
