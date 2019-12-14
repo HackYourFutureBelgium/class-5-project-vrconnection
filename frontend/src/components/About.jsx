@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Col, Image } from 'react-bootstrap';
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/banner-logo.png';
 
 const About = () => (
   <Container>
@@ -14,8 +14,8 @@ const About = () => (
       providing them useful information and make them connect with  volunteers that can help them.
     </p>
 
-    <Col xs={6} md={6}>
-      <Image className="mx-auto d-block fluid" src={logo} rounded />
+    <Col xs={15} md={15}>
+      <Image className="mx-auto d-block fluid" src={logo} fluid />
     </Col>
   </Container>
 )
