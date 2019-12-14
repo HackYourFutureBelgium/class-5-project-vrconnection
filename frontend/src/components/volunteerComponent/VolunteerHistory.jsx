@@ -9,11 +9,13 @@ import {
   Row,
   Col,
   Tab,
+  Card,
 } from 'react-bootstrap';
 
 import PaginationBasic from './PaginationBasic';
 import VolunteerRegister from './VolunteerRegister';
 import VolunteerListOfHelp from './VolunteerListOfHelp';
+import banner from '../../assets/images/banner.jpg'
 import API_URL from '../../api';
 import loading from '../../assets/images/load.gif';
 import { AuthContext } from '../Auth';
@@ -50,6 +52,9 @@ const VolunteerHistory = () => {
         <Container className="mb-4 pt-4">
           <Tab.Container>
             <Row>
+              <Card>
+                <Card.Img variant="top" src={banner} />
+              </Card>
               <Col sm={10}>
                 <h2> My history of Help:  </h2>
                 <br />

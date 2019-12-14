@@ -8,6 +8,7 @@ import {
   Row, Col, Table,
   Image,
 } from 'react-bootstrap';
+
 import RefugeeRegister from './RefugeeRegister'
 import profilePicture from '../../assets/images/refugee_help.jpg'
 import { AuthContext } from '../Auth';
