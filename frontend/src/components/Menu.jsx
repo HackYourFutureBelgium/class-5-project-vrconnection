@@ -26,6 +26,7 @@ const Menu = () => {
 
   return (
     <Navbar collapseOnSelect expand="sm" variant="dark" bg="dark" text="white">
+      <Navbar.Brand>VRConnection</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
