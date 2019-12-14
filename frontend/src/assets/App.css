@@ -73,3 +73,7 @@
 .email {
   color: #ffffff;
 }
+.linkwhite,
+a:hover {
+  color: #ffffff;
+}

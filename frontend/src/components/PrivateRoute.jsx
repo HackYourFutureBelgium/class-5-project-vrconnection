@@ -13,7 +13,6 @@ const PrivateRoute = ({ children }) => {
   if (!currentUser) {
     return (<Col sm={12}><LoginComponent /></Col>);
   }
-
   return (
     <>{children} </>
   )
