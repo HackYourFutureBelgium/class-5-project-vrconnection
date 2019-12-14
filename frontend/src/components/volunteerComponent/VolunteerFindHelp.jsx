@@ -9,11 +9,13 @@ import {
   Row,
   Col,
   Tab,
+  Card,
 } from 'react-bootstrap';
 
 import PaginationBasic from './PaginationBasic';
 import VolunteerRegister from './VolunteerRegister';
 import VolunteerFindListRefugees from './VolunteerFindListRefugees'
+import banner from '../../assets/images/help.jpg'
 import API_URL from '../../api';
 import loading from '../../assets/images/load.gif';
 import { AuthContext } from '../Auth';
@@ -62,6 +64,9 @@ const VolunteerFindHelp = () => {
         <Container className="mb-4 pt-4">
           <Tab.Container>
             <Row>
+              <Card>
+                <Card.Img variant="top" src={banner} />
+              </Card>
               <Col sm={10}>
                 <h2> Directory of Refugees:  </h2>
                 <br />

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import refugeeCamp0 from '../assets/images/refugee.jpg';
-import refugeeCamp1 from '../assets/images/refugee_camp_0.jpg';
-import refugeeCamp2 from '../assets/images/refugee_camp_1.jpg';
+import refugeeCamp0 from '../assets/images/refugees-volunteers1.jpg';
+import refugeeCamp1 from '../assets/images/refugees-volunteers2.jpg';
+import refugeeCamp2 from '../assets/images/refugees-volunteers3.jpg';
 
 const Aside = () => (
   <Carousel indicators="false">
@@ -13,8 +13,8 @@ const Aside = () => (
         alt="First slide"
       />
       <Carousel.Caption>
-        <h3>You can make a difference</h3>
-        <p>Remember that the happiest people are not those getting more, but those giving more. </p>
+        <h3 className="text-light bg-dark">You can make a difference</h3>
+        <p className="p-3 mb-2 bg-info text-white">Remember that the happiest people are not those getting more, but those giving more. </p>
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
@@ -25,8 +25,8 @@ const Aside = () => (
       />
 
       <Carousel.Caption>
-        <h3>What is the essence of life? </h3>
-        <p>To serve others and to do good.</p>
+        <h3 className="text-light bg-dark">What is the essence of life? </h3>
+        <p className="p-3 mb-2 bg-info text-white">Help to others.</p>
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
@@ -37,8 +37,8 @@ const Aside = () => (
       />
 
       <Carousel.Caption>
-        <h3>John Holmes</h3>
-        <p>There is no exercise better for the heart than reaching down and lifting people up</p>
+        <h3 className="text-light bg-dark">John Holmes</h3>
+        <p className="p-3 mb-2 bg-info text-white">There is no exercise better for the heart than reaching down and lifting people up</p>
       </Carousel.Caption>
     </Carousel.Item>
   </Carousel>

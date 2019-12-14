@@ -16,6 +16,7 @@ import { AuthProvider } from './Auth';
 import PrivateRoute from './PrivateRoute';
 import RefugeeRegister from './refugeeComponent/RefugeeRegister';
 import RefugeeProfile from './refugeeComponent/RefugeeProfile';
+import RefugeeMyHelp from './refugeeComponent/RefugeeMyHelp';
 import VolunteerHistory from './volunteerComponent/VolunteerHistory';
 import VolunteerRegister from './volunteerComponent/VolunteerRegister';
 import VolunteerProfile from './volunteerComponent/VolunteerProfile';
@@ -31,15 +32,14 @@ const Layout = () => {
         </Row>
         <Row>
           <Switch>
-            <Route exact path="/">
-              <Col sm={6}><About /></Col>
-              <Col sm={6}><Aside /></Col>
-            </Route>
             <PrivateRoute exact path="/refugees/signup">
               <Col sm={12}><RefugeeRegister setError={setError} error={error} /></Col>
             </PrivateRoute>
             <PrivateRoute exact path="/refugees/profile">
-              <Col sm={12}><RefugeeProfile setError={setError} /></Col>
+              <Col sm={12}><RefugeeProfile setError={setError} error={error} /></Col>
+            </PrivateRoute>
+            <PrivateRoute exact path="/refugees/myHelp">
+              <Col sm={12}><RefugeeMyHelp /></Col>
             </PrivateRoute>
             <PrivateRoute exact path="/volunteers/signup">
               <Col sm={12}><VolunteerRegister /></Col>
@@ -61,6 +61,10 @@ const Layout = () => {
             </Route>
             <Route exact path="/logout">
               <Logout />
+            </Route>
+            <Route path="/">
+              <Col sm={6}><About /></Col>
+              <Col sm={6}><Aside /></Col>
             </Route>
           </Switch>
         </Row>
