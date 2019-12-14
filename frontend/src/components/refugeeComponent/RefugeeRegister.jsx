@@ -126,12 +126,13 @@ const RefugeeRegister = ({ setError }) => {
 
                   <Form.Group as={Col} controlId="formGridGender">
                     <Form.Label sm={3}>
-                      Gender{' '}
+                      Gender
                     </Form.Label>
                     <Col sm={8}>
                       <Form.Control as="select" name="gender" ref={register({ required: true })}>
-                        <option>male</option>
-                        <option>Gender two</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
                       </Form.Control>
                     </Col>
                     <p className="input_errors">{errors.gender && 'gender is required'}</p>
