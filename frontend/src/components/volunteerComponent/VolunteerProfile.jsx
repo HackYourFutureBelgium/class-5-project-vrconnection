@@ -4,7 +4,7 @@
 /* eslint-disable no-lone-blocks */
 
 import React, { useContext } from 'react';
-import { Container, Row, Col, Tab, Card } from 'react-bootstrap';
+import { Container, Row, Tab, Card } from 'react-bootstrap';
 import { AuthContext } from '../Auth';
 import '../../assets/VolunteerProfile.css';
 import banner from '../../assets/images/banner.jpg';
