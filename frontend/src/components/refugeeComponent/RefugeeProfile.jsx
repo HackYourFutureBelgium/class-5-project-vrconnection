@@ -17,7 +17,7 @@ const RefugeeProfile = ({ setError }) => {
       <Row className="m-2">
         <Col sm={6}>
           <Container>
-            <Image src={profilePicture} fluid />
+            <Image src={profilePicture} roundedCircle />
           </Container>
         </Col>
         <Col sm={6}>
