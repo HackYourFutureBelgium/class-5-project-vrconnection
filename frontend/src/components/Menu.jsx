@@ -9,20 +9,30 @@ import {
 } from 'react-bootstrap';
 import { AuthContext } from './Auth';
 import app from './base';
+import check from '../assets/images/check.png';
 
-const PrivateMenu = () => (
-  <>
-    <NavDropdown title="Refugee" id="collasible-nav-dropdown">
-      <NavDropdown.Item href="/refugees/profile">My Profile</NavDropdown.Item>
-      <NavDropdown.Item href="/refugees/myHelp">My help</NavDropdown.Item>
-    </NavDropdown>
-    <NavDropdown title="Volunteer" id="collasible-nav-dropdown">
-      <NavDropdown.Item href="/volunteers/profile">My Profile</NavDropdown.Item>
-      <NavDropdown.Item href="/volunteers/findHelp">I want to help</NavDropdown.Item>
-      <NavDropdown.Item href="/volunteers/history">My history</NavDropdown.Item>
-    </NavDropdown>
-  </>
-)
+const PrivateMenu = () => {
+  let { registeredRefugee } = useContext(AuthContext);
+  if (registeredRefugee === undefined) {
+    registeredRefugee = {};
+  }
+
+  return (
+    <>
+      <NavDropdown title="Refugee" id="collasible-nav-dropdown">
+        <NavDropdown.Item href="/refugees/profile">My Profile</NavDropdown.Item>
+        <NavDropdown.Item href="/refugees/myHelp">My help
+          {registeredRefugee.helpVolunteer !== undefined ? <img src={check} alt="check" /> : null}
+        </NavDropdown.Item>
+      </NavDropdown>
+      <NavDropdown title="Volunteer" id="collasible-nav-dropdown">
+        <NavDropdown.Item href="/volunteers/profile">My Profile</NavDropdown.Item>
+        <NavDropdown.Item href="/volunteers/findHelp">I want to help</NavDropdown.Item>
+        <NavDropdown.Item href="/volunteers/history">My history</NavDropdown.Item>
+      </NavDropdown>
+    </>
+  )
+}
 
 const Menu = () => {
   const { currentUser } = useContext(AuthContext);

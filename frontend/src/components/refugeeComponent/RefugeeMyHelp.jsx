@@ -32,7 +32,7 @@ const RefugeeMyHelp = ({ setError }) => {
       .catch((err) => setVolunteer('no-register'));
   }
 
-  if (registeredRefugee !== undefined && volunteer !== undefined) {
+  if (registeredRefugee !== undefined) {
     return (
       <Row className="m-2">
         <Col sm={6}>
@@ -47,27 +47,27 @@ const RefugeeMyHelp = ({ setError }) => {
               <tbody>
                 <tr>
                   <th>Name</th>
-                  <td>{volunteer.name}</td>
+                  <td>{volunteer ? volunteer.name : null}</td>
                 </tr>
                 <tr>
                   <th>Email</th>
-                  <td>{volunteer.email}</td>
+                  <td>{volunteer ? volunteer.email : null}</td>
                 </tr>
                 <tr>
                   <th>City</th>
-                  <td>{volunteer.city}</td>
+                  <td>{volunteer ? volunteer.city : null}</td>
                 </tr>
                 <tr>
                   <th>Age</th>
-                  <td>{volunteer.age}</td>
+                  <td>{volunteer ? volunteer.age : null}</td>
                 </tr>
                 <tr>
                   <th>Gender</th>
-                  <td>{volunteer.gender}</td>
+                  <td>{volunteer ? volunteer.gender : null}</td>
                 </tr>
                 <tr>
                   <th> About Me</th>
-                  <td>{volunteer.description}</td>
+                  <td>{volunteer ? volunteer.description : null}</td>
                 </tr>
               </tbody>
             </Table>
