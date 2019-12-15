@@ -9,6 +9,7 @@ import {
 } from 'react-bootstrap';
 import VolunteerRegisterInfo from './VolunteerRegisterInfo';
 import API_URL from '../../api';
+import SubmitConfirmation from '../refugeeComponent/SubmitConfirmation';
 import { AuthContext } from '../Auth';
 
 function VolunteerRegistrationForm({ formVolunteer, setFormVolunteer }) {
@@ -21,6 +22,7 @@ function VolunteerRegistrationForm({ formVolunteer, setFormVolunteer }) {
     email = emailDefault;
   }
 
+  const [signUp, setSignUp] = useState(false);
   const [name, setName] = useState('');
   const [help, setHelp] = useState([]);
   const [age, setAge] = useState(18);
@@ -70,8 +72,8 @@ function VolunteerRegistrationForm({ formVolunteer, setFormVolunteer }) {
           'Content-Type': 'application/json',
         },
       })
-      .then((result) => setFormVolunteer(result))
       .catch((error) => setFormVolunteer({ error: 1, message: error.response.data }));
+      setSignUp(true);
   };
 
   return (
@@ -144,6 +146,7 @@ function VolunteerRegistrationForm({ formVolunteer, setFormVolunteer }) {
                   Submit
                 </Button>
               </Form>
+              {signUp ? <SubmitConfirmation /> : null}
             </Card.Body>
           </Card>
         </Container>
