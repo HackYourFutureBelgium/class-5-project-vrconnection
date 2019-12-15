@@ -18,6 +18,7 @@ import {
 import { AuthContext } from '../Auth';
 import SubmitConfirmationVolunteerHelp from './SubmitConfirmationVolunteerHelp';
 import API_URL from '../../api';
+import face from '../../assets/images/smile.png';
 
 const VolunteerFindListRefugees = ({
   PaginationValue,
@@ -64,7 +65,7 @@ const VolunteerFindListRefugees = ({
                 if (index >= (PaginationValue * (pagination - 1)) && index < (PaginationValue * pagination)) {
                   return (
                     <ListGroup.Item variant="secondary" action href={url} key={refugee._id}>
-                      {refugee.firstName} {refugee.lastName}
+                      <img alt="img" src={face} with="30%" /> {refugee.firstName} {refugee.lastName}
                     </ListGroup.Item>
                   )
                 }

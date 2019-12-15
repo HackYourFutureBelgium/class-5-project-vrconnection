@@ -35,7 +35,7 @@ const Layout = () => {
         <Row>
           {error ? <ErrorComponent error={error} /> : (
             <Switch>
-              <Route exact path="/refugees/register">
+              <Route exact path="/refugees/signup">
                 <Col sm={12}><RefugeeRegister setError={setError} /></Col>
               </Route>
               <Route exact path="/refugees/profile">
