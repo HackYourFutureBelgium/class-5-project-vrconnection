@@ -13,7 +13,6 @@ import { AuthContext } from '../Auth';
 
 const RefugeeProfile = ({ setError }) => {
   const { registeredRefugee } = useContext(AuthContext);
-  console.log(registeredRefugee);
   if (registeredRefugee !== undefined) {
     return (
       <Row className="m-2">
