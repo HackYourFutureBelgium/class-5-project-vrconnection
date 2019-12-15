@@ -130,9 +130,9 @@ const RefugeeRegister = ({ setError }) => {
                     </Form.Label>
                     <Col sm={8}>
                       <Form.Control as="select" name="gender" ref={register({ required: true })}>
-                        <option>Male</option>
-                        <option>Female</option>
-                        <option>Other</option>
+                        <option>male</option>
+                        <option>female</option>
+                        <option>other</option>
                       </Form.Control>
                     </Col>
                     <p className="input_errors">{errors.gender && 'gender is required'}</p>
