@@ -25,7 +25,7 @@ const RefugeeEditProfile = ({ setError }) => {
   if (registeredRefugee === undefined) {
     return (<h1>loading ...</h1>)
   }
-  const email = registeredRefugee.email;
+
   const id = registeredRefugee._id;
 
   const onSubmit = ({
@@ -45,7 +45,6 @@ const RefugeeEditProfile = ({ setError }) => {
         {
           firstName,
           lastName,
-          email,
           phoneNumber,
           country,
           language,

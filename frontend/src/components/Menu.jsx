@@ -14,7 +14,8 @@ const PrivateMenu = () => (
   <>
     <NavDropdown title="Refugee" id="collasible-nav-dropdown">
       <NavDropdown.Item href="/refugees/profile">My Profile</NavDropdown.Item>
-      <NavDropdown.Item href="/refugees/myHelp">My help</NavDropdown.Item>
+      <NavDropdown.Item href="/refugees/myHelp">Requests</NavDropdown.Item>
+      <NavDropdown.Item href="/refugees/register">I need help</NavDropdown.Item>
     </NavDropdown>
     <NavDropdown title="Volunteer" id="collasible-nav-dropdown">
       <NavDropdown.Item href="/volunteers/profile">My Profile</NavDropdown.Item>

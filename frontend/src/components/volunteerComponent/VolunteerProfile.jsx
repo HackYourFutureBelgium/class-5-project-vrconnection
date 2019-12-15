@@ -10,17 +10,14 @@ function VolunteerProfile() {
   let [name, username, age, gender, city, email, help, registeredDate] = '';
 
   if (registeredVolunteer !== undefined) {
-    {
-      console.log(registeredVolunteer);
-      name = registeredVolunteer.name;
-      username = registeredVolunteer.username;
-      age = registeredVolunteer.age;
-      gender = registeredVolunteer.gender;
-      city = registeredVolunteer.city;
-      email = registeredVolunteer.email;
-      help = registeredVolunteer.help;
-      registeredDate = registeredVolunteer.registeredDate;
-    }
+    name = registeredVolunteer.name;
+    username = registeredVolunteer.username;
+    age = registeredVolunteer.age;
+    gender = registeredVolunteer.gender;
+    city = registeredVolunteer.city;
+    email = registeredVolunteer.email;
+    help = registeredVolunteer.help;
+    registeredDate = registeredVolunteer.registeredDate;
   }
 
   return (
@@ -73,10 +70,10 @@ function VolunteerProfile() {
                 </div>
               </div>
               <p>
-                <a href="/editProfilePage" className="btn btn-primary a-btn-slide-text ">
+                <a href="/volunteers/edit" className="btn btn-primary a-btn-slide-text ">
                   <span className="glyphicon glyphicon-edit" aria-hidden="true" />
                   <span>
-                    <strong>Edit</strong>
+                    <strong>Edit Profile</strong>
                   </span>
                 </a>
               </p>
