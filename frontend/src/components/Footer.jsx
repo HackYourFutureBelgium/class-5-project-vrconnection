@@ -15,6 +15,9 @@ const Footer = () => (
             <a href="https://hackyourfuture.be/">Other Volunteers</a>
           </p>
           <p>
+            <a href="/services">Available Services</a>
+          </p>
+          <p>
             <a href="/faq">FAQ</a>
           </p>
         </div>

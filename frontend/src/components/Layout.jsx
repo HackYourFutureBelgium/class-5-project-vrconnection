@@ -20,6 +20,8 @@ import VolunteerHistory from './volunteerComponent/VolunteerHistory';
 import VolunteerRegister from './volunteerComponent/VolunteerRegister';
 import VolunteerProfile from './volunteerComponent/VolunteerProfile';
 import VolunteerFindHelp from './volunteerComponent/VolunteerFindHelp';
+import Faq from './FaqPage/Faq';
+import Services from './Organisation/Services'
 import ErrorComponent from './ErrorComponent';
 import RefugeeEditProfile from './refugeeComponent/RefugeeEditProfile';
 import VolunteerEditProfile from './volunteerComponent/VolunteerEditProfie';
@@ -67,6 +69,12 @@ const Layout = () => {
               </Route>
               <Route exact path="/signup">
                 <SignUp />
+              </Route>
+              <Route exact path="/faq">
+                <Faq />
+              </Route>
+              <Route exact path="/services">
+                <Services />
               </Route>
               <Route path="/">
                 <Col sm={6}><About /></Col>
