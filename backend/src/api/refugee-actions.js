@@ -55,40 +55,50 @@ const createRefugee = async (req, res) => {
 const updateRefugee = async (req, res) => {
   try {
     const refugee = await Refugee.findById(req.params.id);
-    console.log(refugee)
-
+  
     if (refugee === null) return res.status(401).json({
       message: 'Can not update refugee'
     });
-    if (req.body.fullName !== null) {
-      refugee.fullName = req.body.fullName;
+
+   // Modify perfil when the request is from 'form edit profile' --> req.body.helpStatus === undefine
+    if (!req.body.helpStatus) {
+      if (req.body.firstName !== null) {
+        refugee.firstName = req.body.firstName;
+      }
+      if (req.body.lastName !== null) {
+        refugee.lastName = req.body.lastName;
+      }
+      if (req.body.age !== null) {
+        refugee.age = req.body.age;
+      }
+      if (req.body.help !== null) {
+        refugee.help = req.body.help;
+      }
+      if (req.body.gender !== null) {
+        refugee.gender = req.body.gender;
+      }
+      if (req.body.phoneNumber !== null) {
+        refugee.phoneNumber = req.body.phoneNumber;
+      }
+      if (req.body.description !== null) {
+        refugee.description = req.body.description;
+      }
     }
-    if (req.body.age !== null) {
-      refugee.age = req.body.age;
-    }
-    if (req.body.help !== null) {
-      refugee.help = req.body.help;
-    }
-    if (req.body.gender !== null) {
-      refugee.gender = req.body.gender;
-    }
-    if (req.body.phoneNumber !== null) {
-      refugee.phoneNumber = req.body.phoneNumber;
-    }
-    if (req.body.helpStatus !== null) {
-      refugee.helpStatus = req.body.helpStatus;
-    }
-    if (req.body.helpVolunteer !== null) {
-      refugee.helpVolunteer = req.body.helpVolunteer;
-    }
-    if (req.body.description !== null) {
-      refugee.description = req.body.description;
+
+    // when refugee.helpStatus === true It will be never modified again.
+    if (!refugee.helpStatus) {
+      if (req.body.helpStatus !== undefined) {
+        refugee.helpStatus = req.body.helpStatus;
+      }
+      if (req.body.helpVolunteer !== undefined) {
+        refugee.helpVolunteer = req.body.helpVolunteer;
+      }
     }
     const updatedRefugee = await refugee.save();
-    console.log(updateRefugee);
+
     res.json(updatedRefugee);
   } catch (error) {
-    console.log(error)
+
     res.status(403).json({
       message: error.message
     })
