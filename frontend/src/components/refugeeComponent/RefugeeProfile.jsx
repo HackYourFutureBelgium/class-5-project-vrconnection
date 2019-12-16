@@ -6,6 +6,7 @@ import {
   Row, Col, Table,
   Image,
 } from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 import RefugeeRegister from './RefugeeRegister'
 import profilePicture from '../../assets/images/refugees-volunteers-legal.jpg'
 import { AuthContext } from '../Auth';
@@ -53,6 +54,7 @@ const RefugeeProfile = ({ setError }) => {
             </Table>
           </Container>
         </Col>
+        <Link to="/refugees/edit" className="btn btn-primary">Edit Profile</Link>
       </Row>
     )
   } return (

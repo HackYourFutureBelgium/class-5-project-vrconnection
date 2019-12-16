@@ -1,5 +1,6 @@
 /* eslint-disable prefer-destructuring */
 /* eslint-disable react/prop-types */
+/* eslint-disable no-underscore-dangle */
 
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
@@ -13,22 +14,19 @@ import {
 } from 'react-bootstrap';
 import useForm from 'react-hook-form';
 import API_URL from '../../api';
-import RefugeeRegisterInfo from './RefugeeRegisterInfo';
 import countriesAndLanguage from '../../data/countriesAndLanguage.json';
 import SubmitConfirmation from './SubmitConfirmation';
 import { AuthContext } from '../Auth';
 
-const RefugeeRegister = ({ setError }) => {
-  const [signUp, setSignUp] = useState(false);
+const RefugeeEditProfile = ({ setError }) => {
+  const [edited, setEdited] = useState(false);
   const { register, handleSubmit, errors } = useForm();
-  const { currentUser } = useContext(AuthContext);
-
-  let emailDefault = '';
-  let email = '';
-  if (currentUser) {
-    emailDefault = currentUser.email;
-    email = emailDefault;
+  const { registeredRefugee } = useContext(AuthContext);
+  if (registeredRefugee === undefined) {
+    return (<h1>loading ...</h1>)
   }
+
+  const id = registeredRefugee._id;
 
   const onSubmit = ({
     firstName,
@@ -42,12 +40,11 @@ const RefugeeRegister = ({ setError }) => {
     description,
   }) => {
     axios
-      .post(
-        `${API_URL()}/refugee`,
+      .patch(
+        `${API_URL()}/refugee/${id}`,
         {
           firstName,
           lastName,
-          email,
           phoneNumber,
           country,
           language,
@@ -65,33 +62,30 @@ const RefugeeRegister = ({ setError }) => {
       .catch((err) => {
         setError(err);
       });
-    setSignUp(true);
+    setEdited(true);
   };
 
   return (
     <Row>
       <Col sm={6}>
-        <RefugeeRegisterInfo />
+        <div>
+          <p>Edit the page and click the save button</p>
+        </div>
       </Col>
       <Col sm={6}>
         <Container className="border border-primary">
-          <h1 className="pb-2">Refugee Registration  </h1>
+          <h1 className="pb-2">Edit Refugee Profile  </h1>
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Card>
               <Card.Header>
                 <h3> Personal Information  </h3><hr />
-                <Form.Row>
-                  <Form.Group as={Col} controlId="formGridEmail">
-                    <Form.Label>Email: {emailDefault} </Form.Label>
-                  </Form.Group>
-                </Form.Row>
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridFirstName">
                     <Form.Label>First Name</Form.Label>
                     <Form.Control
                       type="text"
                       name="firstName"
-                      placeholder="Your Name"
+                      defaultValue={registeredRefugee.firstName}
                       ref={register({ required: true })}
                     />
                     <p className="input_errors">{errors.firstName && 'First Name required'}</p>
@@ -102,7 +96,7 @@ const RefugeeRegister = ({ setError }) => {
                     <Form.Control
                       type="text"
                       name="lastName"
-                      placeholder="Last Name"
+                      defaultValue={registeredRefugee.lastName}
                       ref={register({ required: true })}
                     />
                     <p className="input_errors">{errors.lastName && 'Last Name required'}</p>
@@ -117,7 +111,7 @@ const RefugeeRegister = ({ setError }) => {
                       <Form.Control
                         type="number"
                         name="age"
-                        placeholder="Your Age"
+                        defaultValue={registeredRefugee.age}
                         ref={register({ required: true })}
                       />
                     </Col>
@@ -129,7 +123,12 @@ const RefugeeRegister = ({ setError }) => {
                       Gender{' '}
                     </Form.Label>
                     <Col sm={8}>
-                      <Form.Control as="select" name="gender" ref={register({ required: true })}>
+                      <Form.Control
+                        as="select"
+                        name="gender"
+                        defaultValue={registeredRefugee.gender}
+                        ref={register({ required: true })}
+                      >
                         <option>male</option>
                         <option>female</option>
                         <option>other</option>
@@ -146,7 +145,7 @@ const RefugeeRegister = ({ setError }) => {
                       <Form.Control
                         type="number"
                         name="phoneNumber"
-                        placeholder="Phone Number"
+                        defaultValue={registeredRefugee.phoneNumber}
                         ref={register({ minlength: 8, maxlength: 15 })}
                       />
                     </Col>
@@ -159,7 +158,7 @@ const RefugeeRegister = ({ setError }) => {
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridCountry">
                     <Form.Label>Country</Form.Label>
-                    <Form.Control as="select" name="country" ref={register}>
+                    <Form.Control as="select" name="country" defaultValue={registeredRefugee.country} ref={register}>
                       {countriesAndLanguage.map((country) => (
                         <option key={country.Name}>{country.Name}</option>
                       ))}
@@ -172,7 +171,7 @@ const RefugeeRegister = ({ setError }) => {
                       as="select"
                       name="language"
                       ref={register}
-                      defaultValue="English"
+                      defaultValue={registeredRefugee.language}
                     >
                       {countriesAndLanguage.map((country) => (
                         <option key={country.Name}>{country.Language}</option>
@@ -187,7 +186,7 @@ const RefugeeRegister = ({ setError }) => {
                 <h3> I need help in:</h3> <hr />
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridHelp">
-                    <Form.Control as="select" name="help" multiple ref={register({ required: true })}>
+                    <Form.Control as="select" name="help" defaultValue={registeredRefugee.help} multiple ref={register({ required: true })}>
                       <option>shelter</option>
                       <option>healthcare</option>
                       <option>education</option>
@@ -199,21 +198,25 @@ const RefugeeRegister = ({ setError }) => {
                 <Form.Row>
                   <Form.Group controlId="formDescription" as={Col}>
                     <Form.Label sm={6}>Describe your needs in detail:</Form.Label>
-                    <Form.Control name="description" as="textarea" ref={register} />
+                    <Form.Control
+                      name="description"
+                      as="textarea"
+                      defaultValue={registeredRefugee.description}
+                      ref={register}
+                    />
                   </Form.Group>
                 </Form.Row>
               </Card.Header>
             </Card>
             <Button type="submit" size="lg" className="btn btn-primary mx-auto d-block mt-4">
-              Submit
+              Save
             </Button>
           </Form>
-          {signUp ? <SubmitConfirmation /> : null}
-          <p>already registered ? click <a href="/login">Log in</a></p>
+          {edited ? <SubmitConfirmation /> : null}
         </Container>
       </Col>
     </Row>
   );
 };
 
-export default RefugeeRegister;
+export default RefugeeEditProfile;

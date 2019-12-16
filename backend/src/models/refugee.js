@@ -40,7 +40,8 @@ const refugeeSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    lowercase: true
+    required: true,
+    unique: true,
   },
   registeredDate: {
     type: Date,
