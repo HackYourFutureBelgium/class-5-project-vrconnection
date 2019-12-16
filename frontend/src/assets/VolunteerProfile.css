@@ -33,6 +33,12 @@ p {
   -webkit-transition: all 0.3s ease-in;
   -moz-transform: all 0.3s ease-in;
 }
+.cardBanner {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
 .VolunteerProfileCard:hover {
   background: #3c9ae7;
   color: #fff;

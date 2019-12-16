@@ -7,7 +7,7 @@ import React, { useContext } from 'react';
 import { Container, Row, Tab, Card } from 'react-bootstrap';
 import { AuthContext } from '../Auth';
 import '../../assets/VolunteerProfile.css';
-import banner from '../../assets/images/banner.jpg';
+import banner from '../../assets/images/vpbanner.png';
 
 function VolunteerProfile() {
   const { registeredVolunteer } = useContext(AuthContext);
@@ -32,7 +32,7 @@ function VolunteerProfile() {
         <Tab.Container>
           <Row>
             <Card>
-              <Card.Img variant="top" src={banner} />
+              <Card.Img className="card text-center" variant="top" src={banner} />
             </Card>
           </Row>
         </Tab.Container>
