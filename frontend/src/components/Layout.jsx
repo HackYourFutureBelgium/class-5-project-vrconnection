@@ -21,10 +21,10 @@ import VolunteerRegister from './volunteerComponent/VolunteerRegister';
 import VolunteerProfile from './volunteerComponent/VolunteerProfile';
 import VolunteerFindHelp from './volunteerComponent/VolunteerFindHelp';
 import Faq from './FaqPage/Faq';
-import Services from './Organisation/Services'
 import ErrorComponent from './ErrorComponent';
 import RefugeeEditProfile from './refugeeComponent/RefugeeEditProfile';
 import VolunteerEditProfile from './volunteerComponent/VolunteerEditProfie';
+import OrganizationsComponent from './OrganazationsComponent';
 
 const Layout = () => {
   const [error, setError] = useState();
@@ -73,12 +73,14 @@ const Layout = () => {
               <Route exact path="/faq">
                 <Faq />
               </Route>
-              <Route exact path="/services">
-                <Services />
-              </Route>
               <Route path="/">
-                <Col sm={6}><About /></Col>
-                <Col sm={6}><Aside /></Col>
+                <Row className="ml-1">
+                  <Col sm={6}><About /></Col>
+                  <Col sm={6}><Aside /></Col>
+                </Row>
+                <Row>
+                  <Col lg={12} className="ml-1"><OrganizationsComponent /></Col>
+                </Row>
               </Route>
             </Switch>
           )}
