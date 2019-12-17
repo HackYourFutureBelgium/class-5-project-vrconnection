@@ -3,7 +3,14 @@ import { Container, Col, Image } from 'react-bootstrap';
 import logo from '../assets/images/banner-logo.png';
 
 const About = () => (
-  <Container>
+  <Container
+    style={{
+      marginLeft: '3%',
+      marginRight: '3%',
+      marginTop: '3%',
+      marginBottom: '5%',
+    }}
+  >
     <h1 className="bd-content">Our Project - VRConnection</h1>
     <p>
       The Inspiration of Our Project is Hack Your Furute and mainly the Coaches who
