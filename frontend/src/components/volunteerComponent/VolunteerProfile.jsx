@@ -81,14 +81,6 @@ function VolunteerProfile() {
                     <div className="col-4 t ">{registeredDate}</div>
                   </div>
                 </div>
-                <p>
-                  <a href="/editProfilePage" className="btn btn-primary a-btn-slide-text ">
-                    <span className="glyphicon glyphicon-edit" aria-hidden="true" />
-                    <span>
-                      <strong>Edit</strong>
-                    </span>
-                  </a>
-                </p>
               </div>
               <p>
                 <a href="/volunteers/edit" className="btn btn-primary a-btn-slide-text ">

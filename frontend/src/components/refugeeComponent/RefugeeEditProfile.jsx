@@ -187,10 +187,15 @@ const RefugeeEditProfile = ({ setError }) => {
                 <Form.Row>
                   <Form.Group as={Col} controlId="formGridHelp">
                     <Form.Control as="select" name="help" defaultValue={registeredRefugee.help} multiple ref={register({ required: true })}>
-                      <option>shelter</option>
-                      <option>healthcare</option>
+                      <option>advice</option>
+                      <option>clothing</option>
                       <option>education</option>
+                      <option>food</option>
+                      <option>healthcare</option>
                       <option>legal advice</option>
+                      <option>shelter</option>
+                      <option>talk</option>
+                      <option>other</option>
                     </Form.Control>
                     <p className="input_errors">{errors.help && 'please select one help'}</p>
                   </Form.Group>

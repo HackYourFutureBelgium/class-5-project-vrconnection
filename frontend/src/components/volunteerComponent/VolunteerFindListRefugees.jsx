@@ -29,6 +29,7 @@ const VolunteerFindListRefugees = ({
   const { register, handleSubmit } = useForm();
   const { registeredVolunteer } = useContext(AuthContext);
   const [updateRefugee, setUpdateRefugee] = useState(false);
+  const [activeId, setactiveId] = useState();
   const onSubmit = ({
     volunterId,
     refugeeId,
@@ -54,8 +55,19 @@ const VolunteerFindListRefugees = ({
       });
   };
 
+  const handleChangeId = (id) => {
+    setactiveId(id);
+  }
+  let id = null;
+  if (refugeesInfoFilter[0]) {
+    id = refugeesInfoFilter[0]._id;
+  }
+  if (activeId !== undefined) {
+    id = activeId;
+  }
+  const urlRefugeeActive = `#${id}`;
   return (
-    <Tab.Container id="list-group">
+    <Tab.Container id="list-group" activeKey={id === null ? null : urlRefugeeActive}>
       <Row>
         <Col sm={4}>
           <ListGroup>
@@ -64,7 +76,7 @@ const VolunteerFindListRefugees = ({
                 const url = `#${refugee._id}`;
                 if (index >= (PaginationValue * (pagination - 1)) && index < (PaginationValue * pagination)) {
                   return (
-                    <ListGroup.Item variant="secondary" action href={url} key={refugee._id}>
+                    <ListGroup.Item variant="secondary" action href={url} key={refugee._id} onClick={() => handleChangeId(refugee._id)}>
                       <img alt="img" src={face} with="30%" /> {refugee.firstName} {refugee.lastName}
                     </ListGroup.Item>
                   )

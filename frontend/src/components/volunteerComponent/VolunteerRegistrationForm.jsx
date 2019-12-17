@@ -73,7 +73,7 @@ function VolunteerRegistrationForm({ formVolunteer, setFormVolunteer }) {
         },
       })
       .catch((error) => setFormVolunteer({ error: 1, message: error.response.data }));
-      setSignUp(true);
+    setSignUp(true);
   };
 
   return (
@@ -113,10 +113,15 @@ function VolunteerRegistrationForm({ formVolunteer, setFormVolunteer }) {
                     onChange={handleHelp}
                     multiple
                   >
-                    <option>shelter</option>
-                    <option>healthcare</option>
+                    <option>advice</option>
+                    <option>clothing</option>
                     <option>education</option>
+                    <option>food</option>
+                    <option>healthcare</option>
                     <option>legal advice</option>
+                    <option>shelter</option>
+                    <option>talk</option>
+                    <option>other</option>
                   </Form.Control>
                 </Form.Group>
                 <Form.Group controlId="VolunteerAge">

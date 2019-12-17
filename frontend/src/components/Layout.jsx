@@ -74,7 +74,10 @@ const Layout = () => {
                 <Faq />
               </Route>
               <Route path="/">
-                <Row className="ml-1">
+                <Row
+                  className="ml-1"
+                  style={{ marginTop: '2%' }}
+                >
                   <Col sm={6}><About /></Col>
                   <Col sm={6}><Aside /></Col>
                 </Row>

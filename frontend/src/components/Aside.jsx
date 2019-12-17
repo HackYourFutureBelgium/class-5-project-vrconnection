@@ -5,7 +5,12 @@ import refugeeCamp1 from '../assets/images/refugees-volunteers2.jpg';
 import refugeeCamp2 from '../assets/images/refugees-volunteers3.jpg';
 
 const Aside = () => (
-  <Carousel indicators="false">
+  <Carousel
+    indicators="false"
+    style={{
+      marginRight: '8%',
+    }}
+  >
     <Carousel.Item>
       <img
         className="d-block w-100"
