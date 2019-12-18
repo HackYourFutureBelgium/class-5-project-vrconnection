@@ -9,7 +9,7 @@ import {
 } from 'react-bootstrap';
 import VolunteerRegisterInfo from './VolunteerRegisterInfo';
 import API_URL from '../../api';
-import SubmitConfirmation from '../refugeeComponent/SubmitConfirmation';
+import confirmMessage from '../helpers/ConfirmMessage';
 import { AuthContext } from '../Auth';
 
 function VolunteerRegistrationForm({ formVolunteer, setFormVolunteer }) {
@@ -151,7 +151,7 @@ function VolunteerRegistrationForm({ formVolunteer, setFormVolunteer }) {
                   Submit
                 </Button>
               </Form>
-              {signUp ? <SubmitConfirmation /> : null}
+              {signUp ? confirmMessage('Volunteer Registered!', 'Thank you for Registering', '/', 'Ok') : null}
             </Card.Body>
           </Card>
         </Container>

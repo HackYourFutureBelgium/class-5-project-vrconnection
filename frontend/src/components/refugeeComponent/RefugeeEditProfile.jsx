@@ -15,8 +15,9 @@ import {
 import useForm from 'react-hook-form';
 import API_URL from '../../api';
 import countriesAndLanguage from '../../data/countriesAndLanguage.json';
-import SubmitConfirmation from './SubmitConfirmation';
+
 import { AuthContext } from '../Auth';
+import confirmMessage from '../helpers/ConfirmMessage';
 
 const RefugeeEditProfile = ({ setError }) => {
   const [edited, setEdited] = useState(false);
@@ -217,7 +218,7 @@ const RefugeeEditProfile = ({ setError }) => {
               Save
             </Button>
           </Form>
-          {edited ? <SubmitConfirmation /> : null}
+          {edited ? confirmMessage('Updated Successfully', 'Great!', '/', 'OK') : null}
         </Container>
       </Col>
     </Row>

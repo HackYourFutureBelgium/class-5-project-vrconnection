@@ -90,6 +90,14 @@ function VolunteerProfile() {
                   </span>
                 </a>
               </p>
+              <p>
+                <a href="/volunteers/delete" className="btn btn-danger a-btn-slide-text ">
+                  <span className="glyphicon glyphicon-edit" aria-hidden="true" />
+                  <span>
+                    <strong>Delete</strong>
+                  </span>
+                </a>
+              </p>
             </div>
           </div>
         </div>
