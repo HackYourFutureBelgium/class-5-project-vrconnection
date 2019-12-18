@@ -48,13 +48,18 @@ const RefugeeProfile = ({ setError }) => {
                 </tr>
                 <tr>
                   <th>Need Help in</th>
-                  <td>{registeredRefugee.description}</td>
+                  <td>
+                    {registeredRefugee.help.map((help) => (
+                      <p>{help}</p>
+                    ))}
+                  </td>
                 </tr>
               </tbody>
             </Table>
           </Container>
         </Col>
         <Link to="/refugees/edit" className="btn btn-primary">Edit Profile</Link>
+        <Link to="/refugees/delete" className="btn btn-danger">Delete</Link>
       </Row>
     )
   } return (

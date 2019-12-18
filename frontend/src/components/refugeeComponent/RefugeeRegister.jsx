@@ -15,8 +15,9 @@ import useForm from 'react-hook-form';
 import API_URL from '../../api';
 import RefugeeRegisterInfo from './RefugeeRegisterInfo';
 import countriesAndLanguage from '../../data/countriesAndLanguage.json';
-import SubmitConfirmation from './SubmitConfirmation';
 import { AuthContext } from '../Auth';
+import typesOfHelp from '../../data/typeOfHelps';
+import confirmMessage from '../helpers/ConfirmMessage';
 
 const RefugeeRegister = ({ setError }) => {
   const [signUp, setSignUp] = useState(false);
@@ -109,50 +110,39 @@ const RefugeeRegister = ({ setError }) => {
                   </Form.Group>
                 </Form.Row>
                 <Form.Row>
-                  <Form.Group as={Col} controlId="formGridAge">
-                    <Form.Label>
-                      Age
-                    </Form.Label>
-                    <Col sm={8}>
-                      <Form.Control
-                        type="number"
-                        name="age"
-                        placeholder="Your Age"
-                        ref={register({ required: true })}
-                      />
-                    </Col>
-                    <p className="input_errors">{errors.age && 'age is required'}</p>
-                  </Form.Group>
-
-                  <Form.Group as={Col} controlId="formGridGender">
-                    <Form.Label sm={3}>
-                      Gender{' '}
-                    </Form.Label>
-                    <Col sm={8}>
-                      <Form.Control as="select" name="gender" ref={register({ required: true })}>
-                        <option>male</option>
-                        <option>female</option>
-                        <option>other</option>
-                      </Form.Control>
-                    </Col>
-                    <p className="input_errors">{errors.gender && 'gender is required'}</p>
-                  </Form.Group>
-                </Form.Row>
-
-                <Form.Row>
                   <Form.Group as={Col} controlId="formGridPhoneNumber">
                     <Form.Label>Phone Number</Form.Label>
-                    <Col sm={6}>
-                      <Form.Control
-                        type="number"
-                        name="phoneNumber"
-                        placeholder="Phone Number"
-                        ref={register({ minlength: 8, maxlength: 15 })}
-                      />
-                    </Col>
+                    <Form.Control
+                      type="number"
+                      name="phoneNumber"
+                      placeholder="Phone Number"
+                      ref={register({ minlength: 8, maxlength: 15 })}
+                    />
                     <p className="input_errors">
                       {errors.phoneNumber && ' please enter valid phone number'}
                     </p>
+                  </Form.Group>
+                  <Form.Group as={Col} controlId="formGridAge" className="col-md-3">
+                    <Form.Label>Age </Form.Label>
+                    <Form.Control
+                      type="number"
+                      name="age"
+                      placeholder="Age"
+                      ref={register({ required: true })}
+                    />
+                    <p className="input_errors">{errors.age && 'age is required'}</p>
+                  </Form.Group>
+
+                  <Form.Group as={Col} controlId="formGridGender" className="col-md-3">
+                    <Form.Label sm={3}>
+                      Gender{' '}
+                    </Form.Label>
+                    <Form.Control as="select" name="gender" ref={register({ required: true })}>
+                      <option>male</option>
+                      <option>female</option>
+                      <option>other</option>
+                    </Form.Control>
+                    <p className="input_errors">{errors.gender && 'gender is required'}</p>
                   </Form.Group>
                 </Form.Row>
 
@@ -186,18 +176,18 @@ const RefugeeRegister = ({ setError }) => {
               <Card.Header>
                 <h3> I need help in:</h3> <hr />
                 <Form.Row>
-                  <Form.Group as={Col} controlId="formGridHelp">
-                    <Form.Control as="select" name="help" multiple ref={register({ required: true })}>
-                      <option>advice</option>
-                      <option>clothing</option>
-                      <option>education</option>
-                      <option>food</option>
-                      <option>healthcare</option>
-                      <option>legal advice</option>
-                      <option>shelter</option>
-                      <option>talk</option>
-                      <option>other</option>
-                    </Form.Control>
+                  <Form.Group as={Col} controlId="formGridHelp" key="custom-inline-checkbox" className="mb-3">
+                    {typesOfHelp.map((help, index) => (
+                      <Form.Check
+                        custom
+                        type="checkbox"
+                        name="help"
+                        label={help}
+                        value={help}
+                        id={`custom-inline-checkbox-${index}`}
+                        ref={register({ required: true })}
+                      />
+                    ))}
                     <p className="input_errors">{errors.help && 'please select one help'}</p>
                   </Form.Group>
                 </Form.Row>
@@ -213,8 +203,7 @@ const RefugeeRegister = ({ setError }) => {
               Submit
             </Button>
           </Form>
-          {signUp ? <SubmitConfirmation /> : null}
-          <p>already registered ? click <a href="/login">Log in</a></p>
+          {signUp ? confirmMessage('Refugee Registered Successfully', 'Thank you for Registering!', '/', 'OK') : null}
         </Container>
       </Col>
     </Row>

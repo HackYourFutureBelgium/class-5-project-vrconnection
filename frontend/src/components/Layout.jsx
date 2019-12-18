@@ -25,6 +25,8 @@ import ErrorComponent from './ErrorComponent';
 import RefugeeEditProfile from './refugeeComponent/RefugeeEditProfile';
 import VolunteerEditProfile from './volunteerComponent/VolunteerEditProfie';
 import OrganizationsComponent from './OrganazationsComponent';
+import DeleteRefugee from './refugeeComponent/DeleteRefugee';
+import DeleteVolunteer from './volunteerComponent/DeleteVolunteer';
 
 const Layout = () => {
   const [error, setError] = useState();
@@ -46,6 +48,9 @@ const Layout = () => {
               <Route exact path="/refugees/edit">
                 <Col sm={12}><RefugeeEditProfile setError={setError} /></Col>
               </Route>
+              <Route exact path="/refugees/delete">
+                <Col sm={12}><DeleteRefugee setError={setError} /></Col>
+              </Route>
               <Route exact path="/refugees/myHelp">
                 <Col sm={12}><RefugeeMyHelp /></Col>
               </Route>
@@ -57,6 +62,9 @@ const Layout = () => {
               </Route>
               <Route exact path="/volunteers/edit">
                 <Col sm={12}><VolunteerEditProfile setError={setError} /></Col>
+              </Route>
+              <Route exact path="/volunteers/delete">
+                <Col sm={12}><DeleteVolunteer setError={setError} /></Col>
               </Route>
               <Route exact path="/volunteers/findHelp">
                 <Col sm={12}><VolunteerFindHelp /></Col>

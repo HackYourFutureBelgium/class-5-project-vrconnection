@@ -11,7 +11,7 @@ import useForm from 'react-hook-form';
 import VolunteerRegisterInfo from './VolunteerRegisterInfo';
 import API_URL from '../../api';
 import { AuthContext } from '../Auth';
-import SubmitConfirmation from '../refugeeComponent/SubmitConfirmation';
+import confirmMessage from '../helpers/ConfirmMessage';
 
 const VolunteerEditProfile = ({ setError }) => {
   const [edited, setEdited] = useState(false);
@@ -137,7 +137,7 @@ const VolunteerEditProfile = ({ setError }) => {
               </Form>
             </Card.Body>
           </Card>
-          {edited ? <SubmitConfirmation /> : null}
+          {edited ? confirmMessage('Updated Successfully', 'Well done', '/', 'Ok') : null}
         </Container>
       </Col>
     </Row>
