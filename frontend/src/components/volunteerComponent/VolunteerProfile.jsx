@@ -50,7 +50,6 @@ function VolunteerProfile() {
                   className="img-fluid rounded-circle w-50 mb-3"
                 />
                 <h3>{name}</h3>
-                <h5>Address</h5>
                 <div className="ProfileDetail">
                   <div className="row">
                     <div className="col-4"> Username </div>
